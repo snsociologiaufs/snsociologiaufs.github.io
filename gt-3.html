@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mesas-redondas — VI Seminário Nacional de Sociologia</title>
+<title>GT 3 — Metamorfoses do Trabalho e da Educação na era digital — VI Seminário Nacional de Sociologia</title>
 <meta name="description" content="VI Seminário Nacional de Sociologia do PPGS/UFS. Os desafios da Sociologia e democracia em um mundo digital. Cronograma, programação e inscrições.">
 <link rel="icon" type="image/png" href="images/logo-web1.png?v=2">
 <link rel="apple-touch-icon" href="images/logo-web1.png?v=2">
@@ -31,48 +31,6 @@
     font-family:'Barlow', sans-serif; font-size:16px; line-height:1.65;
     position:relative;
   }
-
-
-  /* ==========================================================
-     MESAS — LISTAGEM
-     ========================================================== */
-  .mesas-page{
-    position:relative;
-    overflow:hidden;
-    background:var(--bg);
-  }
-
-  .mesas-page > section{
-    position:relative;
-  }
-
-  .mesas-page .page-hero{
-    background:#fff;
-    z-index:2;
-  }
-
-  .mesas-page .mesas-list-section{
-    position:relative;
-    overflow:hidden;
-    background:var(--bg);
-    z-index:1;
-  }
-
-  .mesas-page .mesas-list-section .wrap{
-    position:relative;
-    z-index:1;
-  }
-
-  .mesas-page .session-list{
-    width:min(100%, 1060px);
-    margin-left:auto;
-  }
-
-  .mesas-page .session-item{
-    background:rgba(255,255,255,.96);
-    box-shadow:0 10px 28px rgba(11,31,63,.045);
-  }
-
   h1,h2,h3,h4{
     font-family:'Nunito Sans', sans-serif; font-weight:800; margin:0 0 .4em 0;
     line-height:1.12; color:var(--navy); letter-spacing:-0.005em;
@@ -517,7 +475,7 @@
   .subm-card ul{margin:.6em 0 0 0; padding-left:18px; font-size:.87rem; color:var(--text-soft);}
   .subm-card li{margin-bottom:5px;}
   .subm-card p{font-size:.87rem; color:var(--text-soft); margin:.5em 0 0 0;}
-  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--blue); margin-top:10px; display:block;}
+  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:#9A4A1F; margin-top:10px; display:block;}
 
   /* INSCRICAO */
   .insc-box{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start; background:rgba(11,31,63,.92); color:#fff; border-radius:var(--radius); padding:44px 46px; margin-top:20px;}
@@ -603,8 +561,7 @@
 
   .session-list{margin-top:38px; display:flex; flex-direction:column; gap:18px;}
   .session-item{
-    background:rgba(255,255,255,.94);
-    backdrop-filter:blur(3px);
+    background:#fff;
     padding:30px 32px;
     display:grid;
     grid-template-columns:132px minmax(0,1fr) auto;
@@ -619,16 +576,14 @@
     box-shadow:0 10px 28px rgba(11,31,63,.07);
   }
   .session-visual{
-    width:104px; height:104px; min-width:104px;
-    border-radius:50%;
-    background:var(--navy);
-    color:#fff;
+    width:104px; height:104px; border-radius:50%;
+    border:2px solid var(--blue);
+    background:var(--bg-alt);
     display:flex; align-items:center; justify-content:center;
-    font-family:'Nunito Sans',sans-serif;
-    font-size:1.35rem; font-weight:800;
-    letter-spacing:.02em;
-    text-transform:uppercase;
-    box-shadow:0 14px 26px rgba(11,31,63,.12);
+    color:var(--blue);
+    font-family:'Barlow Condensed',sans-serif; font-size:.67rem; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; text-align:center; line-height:1.25;
+    padding:16px;
   }
   .session-main{min-width:0;}
   .session-item .when{
@@ -653,13 +608,13 @@
 
   @media (max-width:760px){
     .session-item{grid-template-columns:86px 1fr; gap:18px; padding:24px 20px;}
-    .session-visual{width:76px; height:76px; min-width:76px; font-size:1rem; padding:0;}
+    .session-visual{width:76px; height:76px; font-size:.58rem; padding:10px;}
     .session-link{grid-column:2; justify-self:start; margin-top:4px;}
     .session-item h4{font-size:1.12rem;}
   }
   @media (max-width:520px){
     .session-item{grid-template-columns:1fr; gap:14px;}
-    .session-visual{width:82px; height:82px; min-width:82px;}
+    .session-visual{width:82px; height:82px;}
     .session-link{grid-column:1;}
   }
 
@@ -873,6 +828,7 @@
       align-items:flex-start;
     }
   }
+
 
 /* === PADRÃO INDEX: MENU + RODAPÉ === */
   /* NAV */
@@ -1212,11 +1168,226 @@ footer h4 {
 }
 
 
+  /* ===== Detalhes dos GTs ===== */
+  .mesa-detail-visual.gt-badge{
+    aspect-ratio:1/1;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--navy);
+    color:#fff;
+    font-family:'Nunito Sans',sans-serif;
+    font-weight:800;
+    font-size:clamp(2rem,5vw,3.4rem);
+    max-width:300px;
+    margin:0 auto;
+  }
+  .mesa-detail p.gt-summary{
+    text-align:justify;
+    text-justify:inter-word;
+  }
+  .approved-section{
+    margin-top:34px;
+    padding-top:28px;
+    border-top:1px solid var(--line);
+  }
+  .approved-section h2{margin-bottom:.6em;}
+  .approved-empty{
+    padding:18px 20px;
+    background:var(--bg-alt);
+    border-left:3px solid var(--cyan);
+    color:var(--text-soft);
+  }
+
+  /* ===== Resumos aprovados organizados por sessão ===== */
+
+  .approved-section .session-block:first-of-type{
+    margin-top:8px;
+    padding:0;
+  }
+
+  .approved-intro{
+    margin:0 0 22px;
+    color:var(--text-soft);
+    max-width:76ch;
+  }
+
+  .session-block{
+    padding:0;
+    margin-top:24px;
+    border:1px solid var(--line);
+    background:#fff;
+  }
+
+  .session-header{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:18px;
+    padding:18px 20px;
+    background:var(--bg-alt);
+    border-bottom:1px solid var(--line);
+  }
+
+  .session-heading{
+    min-width:0;
+  }
+
+  .session-kicker{
+    display:block;
+    margin-bottom:4px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.74rem;
+    font-weight:700;
+    letter-spacing:.11em;
+    text-transform:uppercase;
+    color:var(--indigo);
+  }
+
+  .session-title{
+    margin:0!important;
+    font-size:1.08rem!important;
+    color:var(--navy);
+  }
+
+  .session-meta{
+    flex-shrink:0;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--blue);
+    text-align:right;
+  }
+
+  .paper-list{
+    padding:0 20px;
+  }
+
+  .paper-item{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .paper-item:last-child{
+    border-bottom:0;
+  }
+
+  .paper-title{
+    margin:0 0 8px!important;
+    font-size:1rem!important;
+    line-height:1.35;
+    color:var(--navy);
+  }
+
+  .paper-authors{
+    margin:0 0 14px;
+    font-size:.94rem;
+    line-height:1.55;
+    color:var(--text-soft);
+  }
+
+  .paper-authors strong{
+    color:var(--text);
+    font-weight:600;
+  }
+
+  .paper-abstract{
+    border-top:1px dashed var(--line);
+    padding-top:12px;
+  }
+
+  .paper-abstract summary{
+    list-style:none;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.8rem;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--indigo);
+  }
+
+  .paper-abstract summary::-webkit-details-marker{display:none;}
+  .paper-abstract summary::marker{content:"";}
+
+  .paper-abstract summary::after{
+    content:"+";
+    font-family:'Barlow',sans-serif;
+    font-size:1rem;
+    line-height:1;
+  }
+
+  .paper-abstract[open] summary::after{
+    content:"–";
+  }
+
+  .paper-abstract p{
+    max-width:none;
+    margin:14px 0 0;
+    padding:14px 16px;
+    background:var(--bg-alt);
+    font-size:.95rem;
+    line-height:1.65;
+    text-align:justify;
+    text-justify:inter-word;
+  }
+
+  .approved-note{
+    margin-top:14px;
+    font-size:.82rem;
+    color:var(--text-soft);
+  }
+
+  @media(max-width:640px){
+    .session-header{
+      display:block;
+      padding:16px;
+    }
+
+    .session-meta{
+      margin-top:8px;
+      text-align:left;
+    }
+
+    .paper-list{
+      padding:0 16px;
+    }
+
+    .paper-item{
+      padding:18px 0;
+    }
+  }
+
+
+</style>
+
+<style>
+  .mesa-detail{background:#fff;padding:36px 0 76px;}
+  .mesa-detail-grid{display:grid;grid-template-columns:180px minmax(0,1fr);gap:42px;align-items:start;}
+  .mesa-detail-visual{width:150px;height:150px;border-radius:50%;border:2px solid var(--blue);background:var(--bg-alt);overflow:hidden;display:block;}
+  .mesa-detail-visual img{width:100%;height:100%;display:block;object-fit:cover;object-position:center;}
+  .mesa-meta{display:flex;flex-wrap:wrap;gap:10px 22px;padding-bottom:22px;margin-bottom:28px;border-bottom:1px solid var(--line);}
+  .mesa-meta span{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:600;color:var(--blue);}
+  .mesa-detail h2{font-size:1.16rem;margin:32px 0 12px;}
+  .mesa-detail p{font-size:1rem;color:var(--text);max-width:76ch;}
+  .mesa-people{display:grid;grid-template-columns:1fr 1fr;gap:18px 34px;margin-top:12px;}
+  .mesa-person{padding:14px 0;border-top:1px solid var(--line);}
+  .mesa-person strong{display:block;color:var(--navy);}
+  .back-link{display:inline-block;margin-top:34px;text-decoration:none;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;border-bottom:1px solid var(--navy);}
+  @media(max-width:720px){.mesa-detail-grid{grid-template-columns:1fr;gap:24px}.mesa-detail-visual{width:110px;height:110px}.mesa-people{grid-template-columns:1fr}}
+
+  /* Texto do resumo justificado */
+  .mesa-detail h2 + p{
+    text-align:justify;
+    text-justify:inter-word;
+  }
 </style>
 </head>
-<body>
-
-<div class="bg-fixed" aria-hidden="true"></div>
+<body><div class="bg-fixed" aria-hidden="true"></div>
 <div class="beta-ribbon">VERSÃO BETA</div>
 
 <header class="site-nav">
@@ -1240,114 +1411,107 @@ footer h4 {
       </details>
       <a href="submissao.html">Submissão de Resumo</a>
       <a href="resultados.html">Resultados</a>
-      <a href="index.html#inscricao" class="nav-cta">Inscrição</a>
+      <a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" class="nav-cta" target="_blank" rel="noopener noreferrer">Inscrição</a>
     </nav>
   </div>
 </header>
 
-<main class="mesas-page">
+
 <section class="page-hero">
   <div class="wrap reveal">
-    <a href="index.html#programacao" class="breadcrumb">&larr; Voltar para Programação</a>
-    <span class="eyebrow">Programação · Mesas</span>
-    <h1>Mesas-redondas</h1>
-    <p class="lede" style="max-width:62ch; color:var(--text-soft);">Espaço de diálogo no qual especialistas e participantes <strong>discutem um mesmo tema</strong> sob diferentes pontos de vista, promovendo o <strong>aprofundamento das discussões e a circulação de conhecimentos.</strong></p>
+    <a href="gts.html" class="breadcrumb">&larr; Voltar para Grupos de Trabalho</a>
+    <span class="eyebrow">Programação · GT 3</span>
+    <h1>GT 3 — Metamorfoses do Trabalho e da Educação na era digital</h1>
   </div>
 </section>
 
-<section class="mesas-list-section">
+<section class="mesa-detail">
   <div class="wrap reveal">
-    <div class="session-list">
-      <article class="session-item">
-        <div class="session-visual mr-badge" aria-hidden="true">MR1</div>
-        <div class="session-main">
-          <div class="when">09/11 &middot; 14h30 &ndash; 16h</div>
-          <h4>Mesa 1 — “Religião e Política no Brasil Contemporâneo: Dinâmicas de Participação, Disputas e Reconfigurações do Espaço Público”.</h4>
-          <p><strong>Coordenação:</strong> Prof. Dr. Péricles Andrade (DCS/PPGS/UFS)</p>
-          <p><strong>Expositores:</strong> Profa. Dra. Jéssica da Silva Duarte (Fundaj) e Prof. Dr. Emanuel Freitas da Silva (UECE)</p>
-          <span class="tag">Presencial - Didática VII</span>
+    <div class="mesa-detail-grid">
+      <div class="mesa-detail-visual gt-badge" aria-hidden="true">GT 3</div>
+      <div>
+        <div class="mesa-meta">
+          <span>09, 10 e 11/11</span>
+          <span>9h – 11h</span>
+          <span>Sem modalidade</span>
         </div>
-        <a class="session-link" href="mesa-1.html" aria-label="Ver detalhes da Mesa 1">Ver detalhes</a>
-      </article>
 
-      <article class="session-item">
-        <div class="session-visual mr-badge" aria-hidden="true">MR2</div>
-        <div class="session-main">
-          <div class="when">09/11 &middot; 16h30 &ndash; 18h</div>
-          <h4>Mesa 2 — “A cidade enquanto construção: visualidades, subjetividades e o existir citadino”.</h4>
-          <p><strong>Coordenação:</strong> Prof. Dr. Eder Malta (DCS/PPGS/UFS) e Prof. Dr. Ewerthon Vieira (DCS/PPGS/UFS)</p>
-          <p><strong>Expositores:</strong> a definir</p>
-          <span class="tag">Remota</span>
-        </div>
-        <a class="session-link" href="mesa-2.html" aria-label="Ver detalhes da Mesa 2">Ver detalhes</a>
-      </article>
-      <article class="session-item">
-        <div class="session-visual mr-badge" aria-hidden="true">MR3</div>
-        <div class="session-main">
-          <div class="when">09/11 &middot; 16h30 &ndash; 18h</div>
-          <h4>Mesa 3 — título a definir</h4>
-          <p><strong>Coordenação:</strong> a definir</p>
-          <p><strong>Participantes:</strong> a definir</p>
-          <span class="tag">Presencial</span>
-        </div>
-        <a class="session-link" href="mesa-3.html" aria-label="Ver detalhes da Mesa 3">Ver detalhes</a>
-      </article>
-      <article class="session-item">
-        <div class="session-visual mr-badge" aria-hidden="true">MR4</div>
-        <div class="session-main">
-          <div class="when">10/11 &middot; 14h30 &ndash; 16h</div>
-          <h4>Mesa 4 — “A atualidade de Pierre Bourdieu na análise sociológica no
-mundo contemporâneo”.</h4>
-          <p><strong>Coordenação:</strong> Prof. Dr. Marcelo A. Ennes (DCS/PPGS/UFS)</p>
-          <p><strong>Expositores:</strong> Profa. Dra. Maria A. Chaves Jardim (DCS/PPGCS/FCL/UNESP/AQA), Prof. Dra. Marina de Souza Sartore (DCS/PPGS/UFS), Prof. Dr. Péricles Andrade (DCS/PPGS/UFS), Prof. Dr. Marcelo A. Ennes (DCS/PPGS/UFS)</p>
-          <span class="tag">Híbrida - Didática VII</span>
-        </div>
-        <a class="session-link" href="mesa-4.html" aria-label="Ver detalhes da Mesa 4">Ver detalhes</a>
-      </article>
-      <article class="session-item">
-        <div class="session-visual mr-badge" aria-hidden="true">MR5</div>
-        <div class="session-main">
-          <div class="when">10/11 &middot; 16h30 &ndash; 18h</div>
-          <h4>Mesa 5 — “W. E. B. Du Bois: um clássico que amplia as fronteiras das sociologias contemporâneas”.</h4>
-          <p><strong>Coordenação:</strong> Prof. Dr. Silvio Matheus Alves Santos – DCS/UFC</p>
-          <p><strong>Expositores:</strong> Aline Rangel Goothuzem Albuquerque (PPGS/UFS), Laisla Suelen Miranda Rocha (PPGPSI/UFS), Amanda Beatriz Martins Silva (PPGS/UFS) e Caio César Pedron (PPGS/UNICAMP)</p>
-          <span class="tag">Híbrida - Didática VII</span>
-        </div>
-        <a class="session-link" href="mesa-5.html" aria-label="Ver detalhes da Mesa 5">Ver detalhes</a>
-      </article>
+        <h2>Resumo</h2>
+        <p class="gt-summary">O presente GT tem como proposta reunir os trabalhos que incorporem reflexões sobre os atuais dilemas do contemporâneos do mundo do trabalho, e suas interfaces como os processos educativos, considerando o impacto da revolução digital sobre as tradicionais relações capitalistas de produção, criando novas modalidades que reproduzem o clássico processo de valorização do capital (espaço digital) e também modificando a maneira como o trabalho convencional (e analógico), e a formação do trabalhador, são realizados em um mundo cada vez mais acelerado pela imposição de novas tecnologias de informática e comunicação a serviço da lógica do lucro. Desta forma, o GT contempla produções que lidam tanto com o universo da pesquisa sobre as relações entre educação e o cenário do trabalho contemporâneo, como com os estudos sobre clássicas e as novas formas de trabalho e trabalhadores que marcam os dias de hoje. Como os trabalhadores (analógicos e digitais) se adaptam ao mundo digital, quais grandes mudanças aconteceram desde a popularização da Internet enquanto tecnologia e qual a consequência desta para o futuro do trabalho e da educação da juventude escolarizada são algumas das questões que guiam o tema do GT e os debates sobre as pesquisas apresentadas.</p>
 
-      <article class="session-item">
-        <div class="session-visual mr-badge" aria-hidden="true">MR6</div>
-        <div class="session-main">
-          <div class="when">11/11 &middot; 14h30 &ndash; 16h</div>
-          <h4>Mesa 6 — Expositor confirmado.</h4>
-          <p><strong>Coordenação:</strong> Prof. Dr. Marco Aurélio Dias de Souza (DCS/PPGS/UFS)</p>
-          <p><strong>Expositores:</strong> Prof. Dr. Flávio Henrique Calheiros Casimiro</p>
-          <span class="tag">Presencial - Didática VII</span>
+        <div class="mesa-people">
+          <div class="mesa-person"><strong>Coordenadores</strong><span>Me. Victor Hugo Andrade Alves e Me. João Mário Pinto</span></div>
         </div>
-        <a class="session-link" href="mesa-6.html" aria-label="Ver detalhes da Mesa 6">Ver detalhes</a>
-      </article>
 
-      <article class="session-item">
-        <div class="session-visual mr-badge" aria-hidden="true">MR7</div>
-        <div class="session-main">
-          <div class="when">11/11 &middot; 16h30 &ndash; 18h</div>
-          <h4>Mesa 7 — “Metamorfoses do trabalho na era digital”.</h4>
-          <p><strong>Coordenação:</strong> Prof. Dr. Ivan Fontes Barbosa (DCS/PPGS/UFS)</p>
-          <p><strong>Expositores:</strong> Prof. Dr. Sidartha Sória e Silva (UFPE) e Prof. Dr. Sérgio Lessa (UFAL)</p>
-          <span class="tag">A definir</span>
+        <div class="approved-section">
+          <h2>Resumos aprovados para apresentação</h2>
+          <p class="approved-intro">
+            Os trabalhos aprovados serão organizados por sessão. Em cada trabalho constarão o título,
+            a autoria e o resumo completo.
+          </p>
+
+          <!--
+            MODELO DE SESSÃO
+            Duplique o bloco .session-block sempre que houver uma nova sessão.
+          -->
+          <section class="session-block">
+            <div class="session-header">
+              <div class="session-heading">
+                <span class="session-kicker">Sessão de apresentações</span>
+                <h3 class="session-title">Sessão 1 — Título da sessão a inserir</h3>
+              </div>
+              <div class="session-meta">Data e horário a inserir</div>
+            </div>
+
+            <div class="paper-list">
+              <!--
+                MODELO DE TRABALHO
+                Duplique o bloco .paper-item para cada resumo desta sessão.
+              -->
+              
+              <article class="paper-item">
+                <h4 class="paper-title">Título do resumo a inserir</h4>
+                <p class="paper-authors"><strong>Autor(es):</strong> Nome do autor / nomes dos autores</p>
+
+                <details class="paper-abstract">
+                  <summary>Ver resumo</summary>
+                  <p>Resumo do trabalho a inserir.</p>
+                </details>
+              </article>
+
+              <article class="paper-item">
+                <h4 class="paper-title">Título do resumo a inserir</h4>
+                <p class="paper-authors"><strong>Autor(es):</strong> Nome do autor / nomes dos autores</p>
+
+                <details class="paper-abstract">
+                  <summary>Ver resumo</summary>
+                  <p>Resumo do trabalho a inserir.</p>
+                </details>
+              </article>
+
+              <article class="paper-item">
+                <h4 class="paper-title">Título do resumo a inserir</h4>
+                <p class="paper-authors"><strong>Autor(es):</strong> Nome do autor / nomes dos autores</p>
+
+                <details class="paper-abstract">
+                  <summary>Ver resumo</summary>
+                  <p>Resumo do trabalho a inserir.</p>
+                </details>
+              </article>
+
+            </div>
+          </section>
+
+          <p class="approved-note">
+            A programação definitiva das sessões será publicada após a organização dos trabalhos aprovados.
+          </p>
         </div>
-        <a class="session-link" href="mesa-7.html" aria-label="Ver detalhes da Mesa 7">Ver detalhes</a>
-      </article>
 
-
-
+        <a class="back-link" href="gts.html">Voltar à lista de GTs</a>
+      </div>
     </div>
   </div>
 </section>
-
-</main>
-
 <footer>
   <div class="wrap">
 
@@ -1445,7 +1609,11 @@ mundo contemporâneo”.</h4>
           <li><a href="programacao.html">Programação</a></li>
           <li><a href="submissao.html">Submissão de Resumo</a></li>
           <li><a href="resultados.html">Resultados</a></li>
-          <li><a href="index.html#inscricao">Inscrição</a></li>
+         <li>
+          <a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" target="_blank" rel="noopener noreferrer">
+          Inscrição
+        </a>
+        </li>
         </ul>
       </div>
 
@@ -1497,6 +1665,7 @@ mundo contemporâneo”.</h4>
   });
 </script>
 
+
 <script>
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
@@ -1505,5 +1674,6 @@ mundo contemporâneo”.</h4>
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
   }
 </script>
+
 </body>
 </html>

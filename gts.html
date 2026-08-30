@@ -44,7 +44,7 @@
     display:flex; align-items:center; gap:10px; margin-bottom:.9em;
   }
   .eyebrow::before{content:""; width:20px; height:1.5px; background:var(--cyan); display:inline-block;}
-  .placeholder{color:#9A4A1F; background:rgba(154,74,31,.07); border:1px dashed rgba(154,74,31,.4); padding:0 5px; border-radius:2px;}
+  .placeholder{color:var(--text); background:none; border:0; padding:0; border-radius:0;}
 
   /* Fixed background (solid color, no texture) */
   .bg-fixed{
@@ -475,7 +475,7 @@
   .subm-card ul{margin:.6em 0 0 0; padding-left:18px; font-size:.87rem; color:var(--text-soft);}
   .subm-card li{margin-bottom:5px;}
   .subm-card p{font-size:.87rem; color:var(--text-soft); margin:.5em 0 0 0;}
-  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:#9A4A1F; margin-top:10px; display:block;}
+  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--blue); margin-top:10px; display:block;}
 
   /* INSCRICAO */
   .insc-box{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start; background:rgba(11,31,63,.92); color:#fff; border-radius:var(--radius); padding:44px 46px; margin-top:20px;}
@@ -559,16 +559,64 @@
   }
   .breadcrumb:hover{color:var(--indigo);}
 
-  .session-list{margin-top:40px; display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
-  .session-item{background:#fff; padding:26px 28px; display:grid; grid-template-columns:170px 1fr; gap:22px; align-items:start;}
-  .session-item .when{font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:.78rem; letter-spacing:.06em; color:var(--indigo); text-transform:uppercase; line-height:1.5;}
-  .session-item h4{margin:0 0 .35em 0; font-size:1.08rem; color:var(--navy);}
-  .session-item p{margin:0 0 .5em 0; font-size:.9rem; color:var(--text-soft);}
+  .session-list{margin-top:38px; display:flex; flex-direction:column; gap:18px;}
+  .session-item{
+    background:#fff;
+    padding:30px 32px;
+    display:grid;
+    grid-template-columns:132px minmax(0,1fr) auto;
+    gap:28px;
+    align-items:center;
+    border:1px solid var(--line);
+    transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .session-item:hover{
+    border-color:rgba(44,74,147,.35);
+    transform:translateY(-1px);
+    box-shadow:0 10px 28px rgba(11,31,63,.07);
+  }
+  .session-visual{
+    width:104px; height:104px; border-radius:50%;
+    overflow:hidden;
+    border:2px solid var(--blue);
+    background:var(--bg-alt);
+    display:block;
+  }
+  .session-visual img{
+    width:100%; height:100%; display:block;
+    object-fit:cover; object-position:center;
+  }
+  .session-main{min-width:0;}
+  .session-item .when{
+    font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:.83rem;
+    letter-spacing:.07em; color:var(--blue); text-transform:uppercase; line-height:1.45; margin-bottom:8px;
+  }
+  .session-item h4{margin:0 0 .55em 0; font-size:1.26rem; line-height:1.25; color:var(--navy);}
+  .session-item p{margin:0 0 .38em 0; font-size:.96rem; color:var(--text);}
+  .session-item p strong{color:var(--navy);}
   .session-item p:last-child{margin-bottom:0;}
-  .session-item .tag{display:inline-block; margin-top:6px; font-size:.72rem; font-family:'Barlow Condensed',sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan); font-weight:600;}
+  .session-item .tag{
+    display:inline-block; margin-top:10px; font-size:.76rem; font-family:'Barlow Condensed',sans-serif;
+    letter-spacing:.07em; text-transform:uppercase; color:var(--blue); font-weight:600;
+  }
+  .session-link{
+    align-self:center; text-decoration:none; color:var(--navy);
+    font-family:'Barlow Condensed',sans-serif; font-size:.78rem; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase; white-space:nowrap;
+    border-bottom:1px solid var(--navy); padding-bottom:3px;
+  }
+  .session-link:hover{color:var(--blue); border-color:var(--blue);}
 
-  @media (max-width:640px){
-    .session-item{grid-template-columns:1fr; gap:8px;}
+  @media (max-width:760px){
+    .session-item{grid-template-columns:86px 1fr; gap:18px; padding:24px 20px;}
+    .session-visual{width:76px; height:76px; font-size:.58rem; padding:10px;}
+    .session-link{grid-column:2; justify-self:start; margin-top:4px;}
+    .session-item h4{font-size:1.12rem;}
+  }
+  @media (max-width:520px){
+    .session-item{grid-template-columns:1fr; gap:14px;}
+    .session-visual{width:82px; height:82px;}
+    .session-link{grid-column:1;}
   }
 
 
@@ -782,6 +830,363 @@
     }
   }
 
+/* === PADRÃO INDEX: MENU + RODAPÉ === */
+  /* NAV */
+  header.site-nav{position:sticky; top:0; z-index:100; background:rgba(245,246,249,.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1140px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--navy);}
+  .brand-num{font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.7rem; color:var(--indigo); line-height:1;}
+  .brand-text{font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:.86rem; line-height:1.2; color:var(--navy);}
+  .brand-text span{display:block; font-family:'Barlow Condensed',sans-serif; font-weight:500; font-size:.66rem; letter-spacing:.08em; color:var(--text-soft); text-transform:uppercase; margin-top:2px;}
+  .brand-logo{
+  height:38px;      /* ajuste a altura conforme o tamanho do seu logo */
+  width:auto;
+  display:block;
+}
+  nav.links{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
+  nav.links a{text-decoration:none; color:var(--navy); font-weight:500; font-size:.85rem; position:relative; padding:4px 0;}
+  nav.links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px; background:var(--cyan); transition:width .2s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{background:var(--navy); color:#fff!important; padding:9px 18px!important; border-radius:var(--radius); font-size:.78rem!important; font-weight:600!important; text-transform:uppercase; letter-spacing:.05em;}
+  .nav-cta::after{display:none;}
+  .burger{display:none; background:none; border:1.5px solid var(--navy); border-radius:4px; width:38px; height:34px; cursor:pointer; flex-direction:column; align-items:center; justify-content:center; gap:5px;}
+  .burger span{width:18px; height:2px; background:var(--navy); display:block;}
+
+  /* Dropdown — Programação
+     Usa <details>/<summary> para abrir e fechar sem JavaScript. */
+  .nav-item{
+    position:relative;
+    display:block;
+  }
+
+  .nav-item summary{
+    list-style:none;
+    cursor:pointer;
+    color:var(--navy);
+    font-weight:500;
+    font-size:.85rem;
+    position:relative;
+    padding:4px 0;
+    user-select:none;
+  }
+
+  .nav-item summary::-webkit-details-marker{display:none;}
+  .nav-item summary::marker{content:"";}
+
+  .nav-item .caret{
+    display:inline-block;
+    font-size:.62em;
+    margin-left:3px;
+    transform:translateY(-1px);
+    transition:transform .16s ease;
+  }
+
+  .nav-item[open] .caret{
+    transform:translateY(-1px) rotate(180deg);
+  }
+
+  .dropdown{
+    position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px);
+    min-width:220px; background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:0 16px 36px rgba(11,31,63,.16); padding:18px 0 8px 0;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .16s ease, transform .16s ease, visibility .16s ease;
+    z-index:60;
+  }
+
+  .nav-item[open] .dropdown,
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown{
+    display:block;
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); pointer-events:auto;
+  }
+
+  nav.links .dropdown a{display:block; padding:10px 20px; font-size:.84rem; color:var(--text); font-weight:500; white-space:nowrap;}
+  nav.links .dropdown a::after{display:none;}
+  nav.links .dropdown a:hover{background:var(--bg); color:var(--indigo);}
+
+  /* ======================================================================
+     AVISO IMPORTANTE DO SITE
+     ----------------------------------------------------------------------
+     Controle rápido no :root:
+       --aviso-display:block;  -> mostra o aviso
+       --aviso-display:none;   -> esconde o aviso
+
+     Para alterar a mensagem, procure no HTML por "AVISO IMPORTANTE".
+     ====================================================================== */
+  .site-alert{
+    display:var(--aviso-display);
+    background:#FFF7E8;
+    border-bottom:1px solid #E7C98E;
+  }
+
+  .site-alert-content{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:13px 0;
+  }
+
+  .site-alert-label{
+    flex-shrink:0;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#fff;
+    background:#A85F16;
+    padding:5px 9px;
+    border-radius:2px;
+  }
+
+  .site-alert p{
+    margin:0;
+    flex:1;
+    color:var(--navy);
+    font-size:.9rem;
+    line-height:1.45;
+  }
+
+  .site-alert a{
+    flex-shrink:0;
+    color:var(--navy);
+    font-size:.82rem;
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1px solid var(--navy);
+  }
+
+  .site-alert a:hover{
+    color:var(--indigo);
+    border-color:var(--indigo);
+  }
+
+  @media (max-width:760px){
+    .site-alert-content{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+      padding:14px 0;
+    }
+  }
+
+
+/* FOOTER */
+  
+
+/* FOOTER */
+footer {
+  background: rgba(5,11,24,.95);
+  color: #DCE1F0;
+  padding: 56px 0 26px;
+  position: relative;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr .8fr;
+  align-items: start;
+  gap: 48px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+/* Logo e identificação */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.footer-brand img {
+  height: 46px;
+  width: auto;
+  display: block;
+}
+
+.footer-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--cyan);
+}
+
+/* Descrição */
+.footer-description {
+  max-width: 42ch;
+  color: #9AA4C4;
+  font-size: .9rem;
+  margin: .4rem 0 1.4rem;
+}
+
+/* Contato */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.footer-contact span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #C3CAE0;
+}
+
+.footer-contact a {
+  color: #fff;
+  font-size: .9rem;
+  text-decoration: none;
+}
+
+/* Títulos */
+footer h4 {
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+/* Atalhos */
+.footer-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link-list li {
+  margin: 8px 0;
+}
+
+.footer-link-list a {
+  color: #C3CAE0;
+  text-decoration: none;
+  font-size: .88rem;
+}
+
+.footer-link-list a:hover {
+  color: #fff;
+}
+
+/* Local */
+.footer-location p {
+  color: #C3CAE0;
+  font-size: .88rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.footer-location .btn {
+  margin-left: 0;
+}
+
+/* Redes sociais */
+
+.social-row{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:14px;
+}
+
+.social-link{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  width:auto;
+  height:auto;
+  color:#C3CAE0;
+  text-decoration:none;
+  font-size:.84rem;
+}
+
+.social-link svg{
+  width:18px;
+  height:18px;
+  fill:#fff;
+  flex-shrink:0;
+}
+
+.social-link:hover{
+  color:#fff;
+}
+
+/* Parte inferior */
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .72rem;
+  color: #77809E;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Celular */
+@media (max-width: 760px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .foot-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+/* Ajustes de navegação para páginas internas — iguais ao index */
+@media (max-width:900px){
+  nav.links{position:fixed; top:64px; left:0; right:0; background:var(--bg); flex-direction:column; padding:20px 28px; border-bottom:1px solid var(--line); display:none; gap:16px; align-items:flex-start; max-height:calc(100vh - 64px); overflow-y:auto;}
+  nav.links.open{display:flex;}
+  .burger{display:flex;}
+  .nav-item{width:100%; display:block;}
+  .nav-item summary{width:100%; padding:0; font-size:.85rem;}
+  .nav-item:not([open]) .dropdown{display:none;}
+  .nav-item[open] .dropdown{position:static; display:flex; opacity:1; visibility:visible; pointer-events:auto; transform:none; box-shadow:none; border:none; border-left:2px solid var(--line); padding:4px 0 4px 16px; margin:10px 0 0 0; flex-direction:column; gap:10px; width:100%; background:transparent;}
+  nav.links .dropdown a{padding:0; font-size:.82rem; color:var(--text-soft);}
+  nav.links .dropdown a:hover{background:transparent; color:var(--indigo);}
+}
+
+
+
+  /* ===== GTs — adaptação do visual das Mesas ===== */
+  .session-visual.gt-badge{
+    width:112px; height:112px; min-width:112px;
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--navy);
+    color:#fff;
+    font-family:'Nunito Sans',sans-serif;
+    font-weight:800;
+    font-size:1.45rem;
+    letter-spacing:.02em;
+  }
+  .session-main h4{max-width:850px;}
+  .gt-days{font-size:.94rem; color:var(--text-soft);}
+  @media (max-width:700px){
+    .session-visual.gt-badge{width:86px;height:86px;min-width:86px;font-size:1.15rem;}
+  }
+
 </style>
 </head>
 <body>
@@ -791,83 +1196,27 @@
 
 <header class="site-nav">
   <div class="nav-inner">
-
     <a href="index.html#inicio" class="brand">
-      <img
-        src="images/logo-topo.png"
-        alt="VI Seminário Nacional de Sociologia — PPGS · UFS"
-        class="brand-logo"
-      >
-    </a>
-
-    <!-- MENU DESKTOP -->
-    <nav class="desktop-nav" aria-label="Navegação principal">
-
+  <img src="images/logo-topo.png" alt="VI Seminário Nacional de Sociologia — PPGS · UFS" class="brand-logo">
+  </a>
+    <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav class="links" id="navLinks">
       <a href="index.html#inicio">Início</a>
       <a href="index.html#cronograma">Cronograma</a>
-
       <details class="nav-item">
-        <summary>
-          Programação
-          <span class="caret">▾</span>
-        </summary>
-
+        <summary>Programação <span class="caret">▾</span></summary>
         <div class="dropdown">
           <a href="programacao.html">Programação geral</a>
           <a href="conferencias.html">Conferências</a>
-          <a href="gts.html" class="current-page">Grupos de Trabalho</a>
+          <a href="gts.html">Grupos de Trabalho</a>
           <a href="mesas.html">Mesas-redondas</a>
           <a href="oficinas.html">Oficinas</a>
-          <a href="webinar.html">Webinar</a>
         </div>
       </details>
-
-      <a href="index.html#submissoes">Submissão de Resumo</a>
-      <a href="index.html#comissao">Comissão</a>
-      <a href="index.html#apoio">Apoio &amp; Links</a>
+      <a href="submissao.html">Submissão de Resumo</a>
       <a href="resultados.html">Resultados</a>
-      <a href="index.html#inscricao" class="nav-cta">Inscrição</a>
-
+      <a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" class="nav-cta" target="_blank" rel="noopener noreferrer">Inscrição</a>
     </nav>
-
-    <!-- MENU MOBILE — sem JavaScript -->
-    <details class="mobile-nav">
-      <summary aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </summary>
-
-      <nav class="mobile-menu-panel" aria-label="Navegação mobile">
-
-        <a href="index.html#inicio">Início</a>
-        <a href="index.html#cronograma">Cronograma</a>
-
-        <details class="mobile-submenu">
-          <summary>
-            Programação
-            <span class="caret">▾</span>
-          </summary>
-
-          <div class="mobile-submenu-links">
-            <a href="programacao.html">Visão geral</a>
-            <a href="conferencias.html">Conferências</a>
-            <a href="gts.html" class="current-page">Grupos de Trabalho</a>
-            <a href="mesas.html">Mesas-redondas</a>
-            <a href="oficinas.html">Oficinas</a>
-            <a href="webinar.html">Webinar</a>
-          </div>
-        </details>
-
-        <a href="index.html#submissoes">Submissão de Resumo</a>
-        <a href="index.html#comissao">Comissão</a>
-        <a href="index.html#apoio">Apoio &amp; Links</a>
-        <a href="resultados.html">Resultados</a>
-        <a href="index.html#inscricao">Inscrição</a>
-
-      </nav>
-    </details>
-
   </div>
 </header>
 
@@ -876,40 +1225,96 @@
     <a href="index.html#programacao" class="breadcrumb">&larr; Voltar para Programação</a>
     <span class="eyebrow">Programação · GTs</span>
     <h1>Grupos de Trabalho</h1>
-    <p class="lede" style="max-width:62ch; color:var(--text-soft);">Espaço destinado para os participantes compartilharem suas pesquisas e receberem <strong>contribuições de coordenadores, debatedores e demais presentes.</strong></p>
+    <p class="lede" style="max-width:62ch; color:var(--text-soft);">Espaço destinado à apresentação e discussão de pesquisas, organizado por eixos temáticos ao longo dos três dias do evento.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap reveal">
     <div class="session-list">
-      <div class="session-item">
-        <div class="when">GT 1</div>
-        <div>
-          <h4 class="placeholder">Eixo temático a definir</h4>
-          <p><strong>Coordenação:</strong> <span class="placeholder">Nome do coordenador(a)</span></p>
-          <p><strong>Sessões:</strong> <span class="placeholder">09, 10 e 11/11 &middot; 9h &ndash; 11h</span></p>
-          <span class="tag">Sala a definir</span>
+      <article class="session-item">
+        <div class="session-visual gt-badge" aria-hidden="true">GT 1</div>
+        <div class="session-main">
+          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
+          <h4>GT 1 — Sociedade e Vida Econômica</h4>
+          <p><strong>Coordenadoras:</strong> Profa. Marina de Souza Sartore e Ma. Amanda Beatriz Martins Silva</p>
+          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
+          <span class="tag">Remoto</span>
         </div>
-      </div>
-      <div class="session-item">
-        <div class="when">GT 2</div>
-        <div>
-          <h4 class="placeholder">Eixo temático a definir</h4>
-          <p><strong>Coordenação:</strong> <span class="placeholder">Nome do coordenador(a)</span></p>
-          <p><strong>Sessões:</strong> <span class="placeholder">09, 10 e 11/11 &middot; 9h &ndash; 11h</span></p>
-          <span class="tag">Sala a definir</span>
+        <a class="session-link" href="gt-1.html" aria-label="Ver detalhes do GT 1">Ver detalhes</a>
+      </article>
+
+      <article class="session-item">
+        <div class="session-visual gt-badge" aria-hidden="true">GT 2</div>
+        <div class="session-main">
+          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
+          <h4>GT 2 — Sociologia Urbana</h4>
+          <p><strong>Coordenadores:</strong> Prof. Dr. Eder Malta; Prof. Dr. Ewerthon Vieira</p>
+          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
+          <span class="tag">Presencial</span>
         </div>
-      </div>
-      <div class="session-item">
-        <div class="when">GT 3</div>
-        <div>
-          <h4 class="placeholder">Eixo temático a definir</h4>
-          <p><strong>Coordenação:</strong> <span class="placeholder">Nome do coordenador(a)</span></p>
-          <p><strong>Sessões:</strong> <span class="placeholder">09, 10 e 11/11 &middot; 9h &ndash; 11h</span></p>
-          <span class="tag">Sala a definir</span>
+        <a class="session-link" href="gt-2.html" aria-label="Ver detalhes do GT 2">Ver detalhes</a>
+      </article>
+
+      <article class="session-item">
+        <div class="session-visual gt-badge" aria-hidden="true">GT 3</div>
+        <div class="session-main">
+          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
+          <h4>GT 3 — Metamorfoses do Trabalho e da Educação na era digital</h4>
+          <p><strong>Coordenadores:</strong> Me. Victor Hugo Andrade Alves e Me. João Mário Pinto</p>
+          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
+          <span class="tag">Sem modalidade</span>
         </div>
-      </div>
+        <a class="session-link" href="gt-3.html" aria-label="Ver detalhes do GT 3">Ver detalhes</a>
+      </article>
+
+      <article class="session-item">
+        <div class="session-visual gt-badge" aria-hidden="true">GT 4</div>
+        <div class="session-main">
+          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
+          <h4>GT 4 — Migrações Regionais e internacionais contemporâneas: diferentes abordagens teóricas e metodológicas e diferentes recortes empíricos e temáticos</h4>
+          <p><strong>Coordenação:</strong> Prof. Dr. Marcelo Alario Ennes (DCS/PPGS/GEPPIP/UFS)</p>
+          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
+          <span class="tag">Híbrido</span>
+        </div>
+        <a class="session-link" href="gt-4.html" aria-label="Ver detalhes do GT 4">Ver detalhes</a>
+      </article>
+
+      <article class="session-item">
+        <div class="session-visual gt-badge" aria-hidden="true">GT 5</div>
+        <div class="session-main">
+          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
+          <h4>GT 5 — Lepp</h4>
+          <p><strong>Coordenação:</strong> a inserir</p>
+          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
+          <span class="tag">Informações a inserir</span>
+        </div>
+        <a class="session-link" href="gt-5.html" aria-label="Ver detalhes do GT 5">Ver detalhes</a>
+      </article>
+
+      <article class="session-item">
+        <div class="session-visual gt-badge" aria-hidden="true">GT 6</div>
+        <div class="session-main">
+          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
+          <h4>GT 6 — Gerts</h4>
+          <p><strong>Coordenação:</strong> a inserir</p>
+          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
+          <span class="tag">Informações a inserir</span>
+        </div>
+        <a class="session-link" href="gt-6.html" aria-label="Ver detalhes do GT 6">Ver detalhes</a>
+      </article>
+
+      <article class="session-item">
+        <div class="session-visual gt-badge" aria-hidden="true">GT 7</div>
+        <div class="session-main">
+          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
+          <h4>GT 7 — Gepdem</h4>
+          <p><strong>Coordenação:</strong> a inserir</p>
+          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
+          <span class="tag">Informações a inserir</span>
+        </div>
+        <a class="session-link" href="gt-7.html" aria-label="Ver detalhes do GT 7">Ver detalhes</a>
+      </article>
     </div>
   </div>
 </section>
@@ -1008,9 +1413,14 @@
 
         <ul class="footer-link-list">
           <li><a href="index.html#inicio">Início</a></li>
-          <li><a href="index.html#programacao">Programação</a></li>
-          <li><a href="index.html#resultados">Resultados</a></li>
-          <li><a href="index.html#inscricao">Inscrição</a></li>
+          <li><a href="programacao.html">Programação</a></li>
+          <li><a href="submissao.html">Submissão de Resumo</a></li>
+          <li><a href="resultados.html">Resultados</a></li>
+         <li>
+          <a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" target="_blank" rel="noopener noreferrer">
+          Inscrição
+        </a>
+        </li>
         </ul>
       </div>
 
@@ -1020,12 +1430,11 @@
         <h4>Local</h4>
 
         <p>
-          Didática VII — UFS<br>
-          São Cristóvão, Sergipe
+          Cidade Univ. Prof. José Aluísio de Campos — UFS, São Cristóvão, Sergipe
         </p>
 
         <a
-          href="https://maps.app.goo.gl/8ikUXxegfczGUgFb9?g_st=ac"
+          href="https://maps.app.goo.gl/nXTjLvRNHsor8LBw6"
           target="_blank"
           rel="noopener"
           class="btn btn-outline"
@@ -1063,5 +1472,13 @@
   });
 </script>
 
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+</script>
 </body>
 </html>

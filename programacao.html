@@ -1,19 +1,16 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Programação Geral — VI Seminário Nacional de Sociologia</title>
-<meta name="description" content="Programação geral do VI Seminário Nacional de Sociologia do PPGS/UFS, organizada por dia e horário.">
-
-<link rel="icon" type="image/png" href="images/logo-web1.png?v=2">
-<link rel="apple-touch-icon" href="images/logo-web1.png?v=2">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800;6..12,900&display=swap" rel="stylesheet">
-
+<meta content="Programação geral do VI Seminário Nacional de Sociologia do PPGS/UFS, organizada por dia e horário." name="description"/>
+<link href="images/logo-web1.png?v=2" rel="icon" type="image/png"/>
+<link href="images/logo-web1.png?v=2" rel="apple-touch-icon"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800;6..12,900&amp;display=swap" rel="stylesheet"/>
 <style>
   :root{
     --bg:#F5F6F9;
@@ -1040,23 +1037,55 @@ nav.links .dropdown a.current-page{color:var(--indigo);font-weight:600;}
 }
 
 </style>
+<style id="site-standardization">
+/* Menu e rodapé padronizados */
+header.site-nav{position:sticky;top:0;z-index:100;background:rgba(245,246,249,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1140px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+.brand-logo{height:38px;width:auto;display:block;}
+nav.links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+nav.links>a,.nav-item>summary{color:var(--navy);text-decoration:none;font-size:.85rem;font-weight:500;white-space:nowrap;cursor:pointer;list-style:none;}
+.nav-item>summary::-webkit-details-marker{display:none}.nav-item>summary::marker{content:"";}
+nav.links>a{position:relative;padding:4px 0;}
+nav.links>a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--cyan);transition:width .2s ease;}
+nav.links>a:hover::after{width:100%;}
+.nav-cta{background:var(--navy);color:#fff!important;padding:9px 18px!important;border-radius:var(--radius);font-size:.78rem!important;font-weight:600!important;text-transform:uppercase;letter-spacing:.05em;}
+.nav-cta::after{display:none!important;}
+.burger{display:none;background:none;border:1.5px solid var(--navy);border-radius:4px;width:38px;height:34px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.burger span{width:18px;height:2px;background:var(--navy);display:block;}
+.nav-item{position:relative;display:block;}
+.nav-item .caret{display:inline-block;font-size:.62em;margin-left:3px;transform:translateY(-1px);transition:transform .16s ease;}
+.nav-item[open] .caret{transform:translateY(-1px) rotate(180deg);}
+.dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);min-width:220px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 36px rgba(11,31,63,.16);padding:8px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:80;}
+.nav-item[open] .dropdown,.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{display:block;opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto;}
+nav.links .dropdown a{display:block;padding:9px 18px;font-size:.82rem;color:var(--text);font-weight:500;white-space:nowrap;text-decoration:none;}
+nav.links .dropdown a::after{display:none;}nav.links .dropdown a:hover{background:var(--bg);color:var(--indigo);}
+footer{background:#050B18;color:#DCE1F0;padding:56px 0 26px;position:relative;}
+.footer-top{display:grid;grid-template-columns:1.4fr .8fr .8fr;align-items:start;gap:48px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14);}
+.footer-top>*{min-width:0}.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:12px}.footer-brand img{height:46px;width:auto;display:block}.footer-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan)}
+.footer-description{max-width:42ch;color:#9AA4C4;font-size:.9rem;margin:.4rem 0 1.4rem}.footer-contact{display:flex;flex-direction:column;gap:2px;margin-bottom:14px}.footer-contact span{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#C3CAE0}.footer-contact a{color:#fff;font-size:.9rem;text-decoration:none;overflow-wrap:anywhere}
+footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font-weight:700;margin:0 0 16px}.footer-link-list{list-style:none;padding:0;margin:0}.footer-link-list li{margin:8px 0}.footer-link-list a{color:#C3CAE0;text-decoration:none;font-size:.88rem}.footer-link-list a:hover{color:#fff}.footer-location p{color:#C3CAE0;font-size:.88rem;line-height:1.6;margin:0 0 16px}.footer-location .btn{margin-left:0}
+.social-row{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:14px}.social-link{display:flex;align-items:center;gap:9px;width:auto;height:auto;color:#C3CAE0;text-decoration:none;font-size:.84rem}.social-link svg{width:18px;height:18px;fill:#fff;flex-shrink:0}.social-link:hover{color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;color:#77809E}.foot-bottom a{color:#9AA4C4;text-decoration:none;border-bottom:1px solid transparent;transition:color .15s ease,border-color .15s ease}.foot-bottom a:hover{color:#fff;border-bottom-color:#fff}
+@media(max-width:900px){nav.links{position:fixed;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 28px;border-bottom:1px solid var(--line);display:none;gap:16px;align-items:flex-start;max-height:calc(100vh - 64px);overflow-y:auto}nav.links.open{display:flex}.burger{display:flex}.nav-item{width:100%;display:block}.nav-item>summary{width:100%;padding:0}.nav-item:not([open]) .dropdown{display:none}.nav-item[open] .dropdown{position:static;display:flex;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-left:2px solid var(--line);padding:4px 0 4px 16px;margin:10px 0 0;flex-direction:column;gap:10px;width:100%;background:transparent}nav.links .dropdown a{padding:0;color:var(--text-soft)}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.footer-top{grid-template-columns:1fr;gap:36px}.foot-bottom{flex-direction:column;align-items:flex-start}}
+@media(max-width:460px){.nav-inner{padding-left:18px;padding-right:18px}.brand-logo{height:34px}}
+</style>
 </head>
-
 <body>
-
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html#inicio" class="brand">
-  <img src="images/logo-topo.png" alt="VI Seminário Nacional de Sociologia — PPGS · UFS" class="brand-logo">
-  </a>
+      <img src="images/logo-topo.png" alt="VI Seminário Nacional de Sociologia — PPGS · UFS" class="brand-logo">
+    </a>
     <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
-    <nav class="links" id="navLinks">
+    <nav class="links" id="navLinks" aria-label="Navegação principal">
       <a href="index.html#inicio">Início</a>
       <a href="index.html#cronograma">Cronograma</a>
       <details class="nav-item">
         <summary>Programação <span class="caret">▾</span></summary>
         <div class="dropdown">
-          <a href="programacao.html" class="current-page">Programação geral</a>
+          <a href="programacao.html">Programação geral</a>
           <a href="conferencias.html">Conferências</a>
           <a href="gts.html">Grupos de Trabalho</a>
           <a href="mesas.html">Mesas-redondas</a>
@@ -1064,584 +1093,138 @@ nav.links .dropdown a.current-page{color:var(--indigo);font-weight:600;}
         </div>
       </details>
       <a href="submissao.html">Submissão de Resumo</a>
-      <a href="resultados.html">Resultados</a>
+      
       <a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" class="nav-cta" target="_blank" rel="noopener noreferrer">Inscrição</a>
     </nav>
   </div>
 </header>
-
 <section class="page-hero">
-  <div class="wrap">
-
-    <a href="index.html#programacao" class="breadcrumb">
-      &larr; Voltar para a página inicial
+<div class="wrap">
+<a class="breadcrumb" href="index.html#programacao">
+      ← Voltar para a página inicial
     </a>
-
-    <span class="eyebrow">VI SNS · 2026</span>
-
-    <h1>Programação Geral</h1>
-
-    <p>
+<span class="eyebrow">VI SNS · 2026</span>
+<h1>Programação Geral</h1>
+<p>
       Consulte a programação do VI Seminário Nacional de Sociologia por dia e horário.
     </p>
-
-    <div class="program-summary" aria-label="Resumo da programação">
-      <div class="summary-item"><strong>8</strong><span>GTs</span></div>
-      <div class="summary-item"><strong>8</strong><span>Mesas-redondas</span></div>
-      <div class="summary-item"><strong>7</strong><span>Oficinas</span></div>
-      <div class="summary-item"><strong>3</strong><span>Conferências</span></div>
-    </div>
-
-  </div>
+<div aria-label="Resumo da programação" class="program-summary">
+<div class="summary-item"><strong>7</strong><span>GTs</span></div>
+<div class="summary-item"><strong>7</strong><span>Mesas-redondas</span></div>
+<div class="summary-item"><strong>9</strong><span>Oficinas</span></div>
+<div class="summary-item"><strong>3</strong><span>Conferências</span></div>
+</div>
+</div>
 </section>
-
 <main class="programacao">
-  <div class="wrap">
-
-    <!-- ==========================================================
+<div class="wrap">
+<!-- ==========================================================
          DIA 1 — PROGRAMAÇÃO
          Edite aqui os códigos, salas e links conforme a distribuição
          oficial da programação.
          ========================================================== -->
-    <section class="day" id="dia-09">
-
-      <div class="day-header">
-        <div>
-          <span class="day-label">Dia 1</span>
-          <h2>09 de novembro</h2>
-        </div>
-        <span class="weekday">Segunda-feira</span>
-      </div>
-
-      <div class="day-schedule">
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">8h – 9h</div>
-            <div>
-              <span class="activity-title">Credenciamento</span>
-              <p class="simple-info">Didática VII — UFS</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">9h – 11h</div>
-
-            <div>
-              <!-- O LINK FICA APENAS NO TÍTULO DA MODALIDADE -->
-              <a href="gts.html" class="activity-title">Grupos de Trabalho</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">GT1</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">GT2</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">GT3</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">11h30 – 13h</div>
-
-            <div>
-              <a href="oficinas.html" class="activity-title">Oficinas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">OF1</span>
-                  <span class="activity-place">Sala 301 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">OF2</span>
-                  <span class="activity-place">Sala 302 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">14h – 16h</div>
-
-            <div>
-              <a href="mesas.html" class="activity-title">Mesas-redondas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">MR1</span>
-                  <span class="activity-place">Sala 401 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">MR2</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">16h – 16h30</div>
-            <div>
-              <span class="activity-title">Coffee-break</span>
-              <p class="simple-info">Didática VII</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">16h30 – 19h</div>
-
-            <div>
-              <a href="mesas.html" class="activity-title">Mesas-redondas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">MR3</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">19h30 – 21h30</div>
-            <div>
-              <a href="conferencias.html" class="activity-title">Conferência de Abertura</a>
-              <p class="simple-info">Auditório</p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-
-    <!-- DIA 2 -->
-    <section class="day" id="dia-10">
-
-      <div class="day-header">
-        <div>
-          <span class="day-label">Dia 2</span>
-          <h2>10 de novembro</h2>
-        </div>
-        <span class="weekday">Terça-feira</span>
-      </div>
-
-      <div class="day-schedule">
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">8h – 9h</div>
-            <div>
-              <span class="activity-title">Credenciamento</span>
-              <p class="simple-info">Didática VII — UFS</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">9h – 11h</div>
-
-            <div>
-              <a href="gts.html" class="activity-title">Grupos de Trabalho</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">GT4</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">GT5</span>
-                  <span class="activity-place">Sala 3 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">GT6</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">11h30 – 13h</div>
-
-            <div>
-              <a href="oficinas.html" class="activity-title">Oficinas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">OF3</span>
-                  <span class="activity-place">Sala 301 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">OF4</span>
-                  <span class="activity-place">Sala 302 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">OF5</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">14h – 16h</div>
-
-            <div>
-              <a href="mesas.html" class="activity-title">Mesas-redondas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">MR4</span>
-                  <span class="activity-place">Sala 401 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">MR5</span>
-                  <span class="activity-place">Sala 402 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">16h – 16h30</div>
-            <div>
-              <span class="activity-title">Coffee-break</span>
-              <p class="simple-info">Didática VII</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">16h30 – 19h</div>
-
-            <div>
-              <a href="mesas.html" class="activity-title">Mesas-redondas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">MR6</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">19h30 – 21h30</div>
-            <div>
-              <a href="conferencias.html" class="activity-title">Conferência de Meio</a>
-              <p class="simple-info">Auditório</p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-
-    <!-- DIA 3 -->
-    <section class="day" id="dia-11">
-
-      <div class="day-header">
-        <div>
-          <span class="day-label">Dia 3</span>
-          <h2>11 de novembro</h2>
-        </div>
-        <span class="weekday">Quarta-feira</span>
-      </div>
-
-      <div class="day-schedule">
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">8h – 9h</div>
-            <div>
-              <span class="activity-title">Credenciamento</span>
-              <p class="simple-info">Didática VII — UFS</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">9h – 11h</div>
-
-            <div>
-              <a href="gts.html" class="activity-title">Grupos de Trabalho</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">GT7</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">GT8</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">11h30 – 13h</div>
-
-            <div>
-              <a href="oficinas.html" class="activity-title">Oficinas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">OF6</span>
-                  <span class="activity-place">Sala 301 — Didática VII</span>
-                </li>
-
-                <li class="activity-item">
-                  <span class="activity-code">OF7</span>
-                  <span class="activity-place">Sala 302 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">14h – 16h</div>
-
-            <div>
-              <a href="mesas.html" class="activity-title">Mesas-redondas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">MR7</span>
-                  <span class="activity-place">Sala 401 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">16h – 16h30</div>
-            <div>
-              <span class="activity-title">Coffee-break</span>
-              <p class="simple-info">Didática VII</p>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">16h30 – 19h</div>
-
-            <div>
-              <a href="mesas.html" class="activity-title">Mesas-redondas</a>
-
-              <ul class="activity-list">
-                <li class="activity-item">
-                  <span class="activity-code">MR8</span>
-                  <span class="activity-place">Sala 2 — Didática VII</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="time-block">
-          <div class="time-block-inner">
-            <div class="time">19h30 – 21h30</div>
-            <div>
-              <a href="conferencias.html" class="activity-title">Conferência de Encerramento</a>
-              <p class="simple-info">Auditório</p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
+<section class="day" id="dia-09"><div class="day-header"><div><span class="day-label">Dia 1</span><h2>09 de novembro</h2></div><span class="weekday">Segunda-feira</span></div><div class="day-schedule"><article class="time-block"><div class="time-block-inner"><div class="time">8h – 9h</div><div><span class="activity-title">Credenciamento</span><p class="simple-info">Didática VII — UFS</p></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">9h – 11h</div><div><a class="activity-title" href="gts.html">Grupos de Trabalho</a><p class="activity-note">GT 1 a GT 7 realizam sessões nos três dias do evento.</p><ul class="activity-list"><li class="activity-item"><span class="activity-code">GT1</span><span class="activity-place"><a href="gt-1.html">GT 1 — Sociedade e Vida Econômica · Remoto</a></span></li><li class="activity-item"><span class="activity-code">GT2</span><span class="activity-place"><a href="gt-2.html">GT 2 — Sociologia Urbana · Presencial</a></span></li><li class="activity-item"><span class="activity-code">GT3</span><span class="activity-place"><a href="gt-3.html">GT 3 — Metamorfoses do Trabalho e da Educação na era digital · Sem modalidade</a></span></li><li class="activity-item"><span class="activity-code">GT4</span><span class="activity-place"><a href="gt-4.html">GT 4 — Migrações Regionais e internacionais contemporâneas: diferentes abordagens teóricas e metodológicas e diferentes recortes empíricos e temáticos · Híbrido</a></span></li><li class="activity-item"><span class="activity-code">GT5</span><span class="activity-place"><a href="gt-5.html">GT 5 — Lepp · Informações a inserir</a></span></li><li class="activity-item"><span class="activity-code">GT6</span><span class="activity-place"><a href="gt-6.html">GT 6 — Gerts · Informações a inserir</a></span></li><li class="activity-item"><span class="activity-code">GT7</span><span class="activity-place"><a href="gt-7.html">GT 7 — Gepdem · Informações a inserir</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">11h30 – 13h</div><div><a class="activity-title" href="oficinas.html">Oficinas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">OF2</span><span class="activity-place"><a href="oficina-2.html">OF 2 - UM CORPO NO MUNDO - UM CORPO NO CAMPO: O que mais entra em campo quando a Sociologia se apresenta? · Presencial, sala 2</a></span></li><li class="activity-item"><span class="activity-code">OF7</span><span class="activity-place"><a href="oficina-7.html">OF 7 - Etnografar a Vulnerabilidade: a afetação, a escuta e o registro · Presencial, sala do PPGS</a></span></li><li class="activity-item"><span class="activity-code">OF8</span><span class="activity-place"><a href="oficina-8.html">OF 8 - Como estudar as eleições no Brasil? Representatividade e comunicação política · Presencial, sala 1</a></span></li><li class="activity-item"><span class="activity-code">OF9</span><span class="activity-place"><a href="oficina-9.html">OF 9 - O Grindr como heterotopia: a homossociabilidade no espaço digital · Presencial, sala 3</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">14h30 – 16h</div><div><a class="activity-title" href="mesas.html">Mesas-redondas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">MR1</span><span class="activity-place"><a href="mesa-1.html">Mesa 1 — “Religião e Política no Brasil Contemporâneo: Dinâmicas de Participação, Disputas e Reconfigurações do Espaço Público”. · Presencial - Didática VII</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">16h – 16h30</div><div><span class="activity-title">Coffee-break</span><p class="simple-info">Didática VII</p></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">16h30 – 18h</div><div><a class="activity-title" href="mesas.html">Mesas-redondas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">MR2</span><span class="activity-place"><a href="mesa-2.html">Mesa 2 — “A cidade enquanto construção: visualidades, subjetividades e o existir citadino”. · Remota</a></span></li><li class="activity-item"><span class="activity-code">MR3</span><span class="activity-place"><a href="mesa-3.html">Mesa 3 — título a definir · Presencial</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">19h30 – 21h30</div><div><a class="activity-title" href="conferencias.html">Conferência de Abertura</a><p class="activity-note">Apresentação artística: Concerto — Orquestra Sinfônica da UFS</p><p class="simple-info">Prof. Dr. Fernando Balieiro (UFCat) · Auditório da Reitoria</p></div></div></article></div></section>
+<!-- DIA 2 -->
+<section class="day" id="dia-10"><div class="day-header"><div><span class="day-label">Dia 2</span><h2>10 de novembro</h2></div><span class="weekday">Terça-feira</span></div><div class="day-schedule"><article class="time-block"><div class="time-block-inner"><div class="time">8h – 9h</div><div><span class="activity-title">Credenciamento</span><p class="simple-info">Didática VII — UFS</p></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">9h – 11h</div><div><a class="activity-title" href="gts.html">Grupos de Trabalho</a><p class="activity-note">GT 1 a GT 7 realizam sessões nos três dias do evento.</p><ul class="activity-list"><li class="activity-item"><span class="activity-code">GT1</span><span class="activity-place"><a href="gt-1.html">GT 1 — Sociedade e Vida Econômica · Remoto</a></span></li><li class="activity-item"><span class="activity-code">GT2</span><span class="activity-place"><a href="gt-2.html">GT 2 — Sociologia Urbana · Presencial</a></span></li><li class="activity-item"><span class="activity-code">GT3</span><span class="activity-place"><a href="gt-3.html">GT 3 — Metamorfoses do Trabalho e da Educação na era digital · Sem modalidade</a></span></li><li class="activity-item"><span class="activity-code">GT4</span><span class="activity-place"><a href="gt-4.html">GT 4 — Migrações Regionais e internacionais contemporâneas: diferentes abordagens teóricas e metodológicas e diferentes recortes empíricos e temáticos · Híbrido</a></span></li><li class="activity-item"><span class="activity-code">GT5</span><span class="activity-place"><a href="gt-5.html">GT 5 — Lepp · Informações a inserir</a></span></li><li class="activity-item"><span class="activity-code">GT6</span><span class="activity-place"><a href="gt-6.html">GT 6 — Gerts · Informações a inserir</a></span></li><li class="activity-item"><span class="activity-code">GT7</span><span class="activity-place"><a href="gt-7.html">GT 7 — Gepdem · Informações a inserir</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">11h30 – 13h</div><div><a class="activity-title" href="oficinas.html">Oficinas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">OF1</span><span class="activity-place"><a href="oficina-1.html">OF 1 - Introdução à Sociologia Digital · Presencial, sala 3</a></span></li><li class="activity-item"><span class="activity-code">OF2</span><span class="activity-place"><a href="oficina-2.html">OF 2 - UM CORPO NO MUNDO - UM CORPO NO CAMPO: O que mais entra em campo quando a Sociologia se apresenta? · Presencial, sala 2</a></span></li><li class="activity-item"><span class="activity-code">OF4</span><span class="activity-place"><a href="oficina-4.html">OF 4 - DINÂMICAS PARTIDÁRIAS: DIREITA, RELIGIÃO E MILITARISMO · Presencial, alguma sala milagrosa</a></span></li><li class="activity-item"><span class="activity-code">OF7</span><span class="activity-place"><a href="oficina-7.html">OF 7 - Etnografar a Vulnerabilidade: a afetação, a escuta e o registro · Presencial, sala do PPGS</a></span></li><li class="activity-item"><span class="activity-code">OF8</span><span class="activity-place"><a href="oficina-8.html">OF 8 - Como estudar as eleições no Brasil? Representatividade e comunicação política · Presencial, sala 1</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">14h30 – 16h</div><div><a class="activity-title" href="mesas.html">Mesas-redondas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">MR4</span><span class="activity-place"><a href="mesa-4.html">Mesa 4 — “A atualidade de Pierre Bourdieu na análise sociológica no mundo contemporâneo”. · Híbrida - Didática VII</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">16h – 16h30</div><div><span class="activity-title">Coffee-break</span><p class="simple-info">Didática VII</p></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">16h30 – 18h</div><div><a class="activity-title" href="mesas.html">Mesas-redondas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">MR5</span><span class="activity-place"><a href="mesa-5.html">Mesa 5 — “W. E. B. Du Bois: um clássico que amplia as fronteiras das sociologias contemporâneas”. · Híbrida - Didática VII</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">19h30 – 21h30</div><div><a class="activity-title" href="conferencias.html">Conferência de Meio</a><p class="activity-note">Apresentação artística: Música — Louise Nunes, Mildes, Pericles Andrade</p><p class="simple-info">A confirmar · A definir</p></div></div></article></div></section>
+<!-- DIA 3 -->
+<section class="day" id="dia-11"><div class="day-header"><div><span class="day-label">Dia 3</span><h2>11 de novembro</h2></div><span class="weekday">Quarta-feira</span></div><div class="day-schedule"><article class="time-block"><div class="time-block-inner"><div class="time">8h – 9h</div><div><span class="activity-title">Credenciamento</span><p class="simple-info">Didática VII — UFS</p></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">9h – 11h</div><div><a class="activity-title" href="gts.html">Grupos de Trabalho</a><p class="activity-note">GT 1 a GT 7 realizam sessões nos três dias do evento.</p><ul class="activity-list"><li class="activity-item"><span class="activity-code">GT1</span><span class="activity-place"><a href="gt-1.html">GT 1 — Sociedade e Vida Econômica · Remoto</a></span></li><li class="activity-item"><span class="activity-code">GT2</span><span class="activity-place"><a href="gt-2.html">GT 2 — Sociologia Urbana · Presencial</a></span></li><li class="activity-item"><span class="activity-code">GT3</span><span class="activity-place"><a href="gt-3.html">GT 3 — Metamorfoses do Trabalho e da Educação na era digital · Sem modalidade</a></span></li><li class="activity-item"><span class="activity-code">GT4</span><span class="activity-place"><a href="gt-4.html">GT 4 — Migrações Regionais e internacionais contemporâneas: diferentes abordagens teóricas e metodológicas e diferentes recortes empíricos e temáticos · Híbrido</a></span></li><li class="activity-item"><span class="activity-code">GT5</span><span class="activity-place"><a href="gt-5.html">GT 5 — Lepp · Informações a inserir</a></span></li><li class="activity-item"><span class="activity-code">GT6</span><span class="activity-place"><a href="gt-6.html">GT 6 — Gerts · Informações a inserir</a></span></li><li class="activity-item"><span class="activity-code">GT7</span><span class="activity-place"><a href="gt-7.html">GT 7 — Gepdem · Informações a inserir</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">11h30 – 13h</div><div><a class="activity-title" href="oficinas.html">Oficinas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">OF1</span><span class="activity-place"><a href="oficina-1.html">OF 1 - Introdução à Sociologia Digital · Presencial, sala 1</a></span></li><li class="activity-item"><span class="activity-code">OF4</span><span class="activity-place"><a href="oficina-4.html">OF 4 - DINÂMICAS PARTIDÁRIAS: DIREITA, RELIGIÃO E MILITARISMO · Presencial, 2</a></span></li><li class="activity-item"><span class="activity-code">OF7</span><span class="activity-place"><a href="oficina-7.html">OF 7 - Etnografar a Vulnerabilidade: a afetação, a escuta e o registro · Presencial, sala do PPGS</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">14h30 – 16h</div><div><a class="activity-title" href="mesas.html">Mesas-redondas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">MR6</span><span class="activity-place"><a href="mesa-6.html">Mesa 6 — Expositor confirmado. · Presencial - Didática VII</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">16h – 16h30</div><div><span class="activity-title">Coffee-break</span><p class="simple-info">Didática VII</p></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">16h30 – 18h</div><div><a class="activity-title" href="mesas.html">Mesas-redondas</a><ul class="activity-list"><li class="activity-item"><span class="activity-code">MR7</span><span class="activity-place"><a href="mesa-7.html">Mesa 7 — “Metamorfoses do trabalho na era digital”. · A definir</a></span></li></ul></div></div></article><article class="time-block"><div class="time-block-inner"><div class="time">19h30 – 21h30</div><div><a class="activity-title" href="conferencias.html">Conferência de Encerramento</a><p class="activity-note">Apresentação artística: Performance — Boca 07</p><p class="simple-info">Prof. Dr. Sérgio Amadeu (UFABC) · Didática V</p></div></div></article></div></section>
+
+<!-- OFICINAS COM PROGRAMAÇÃO A DEFINIR -->
+<section class="day" id="oficinas-a-definir">
+  <div class="day-header">
+    <div>
+      <span class="day-label">Oficinas</span>
+      <h2>Programação a definir</h2>
+    </div>
+    <span class="weekday">Datas e locais ainda não informados</span>
   </div>
-</main>
 
-<footer>
-  <div class="wrap">
+  <div class="day-schedule">
+    <article class="time-block">
+      <div class="time-block-inner">
+        <div class="time">A definir</div>
+        <div>
+          <a class="activity-title" href="oficinas.html">Oficinas</a>
+          <p class="activity-note">Estas oficinas já estão confirmadas, mas ainda não têm data e local informados na programação disponível.</p>
 
-    <div class="footer-top">
-
-      <!-- EVENTO / CONTATO -->
-      <div class="footer-info">
-
-        <div class="footer-brand">
-          <img
-            src="images/logo-rodape.png"
-            alt="VI Seminário Nacional de Sociologia — PPGS/UFS"
-          >
-
-          <div>
-            <div class="footer-label">VI SNS · 2026</div>
-          </div>
+          <ul class="activity-list">
+            <li class="activity-item">
+              <span class="activity-code">OF3</span>
+              <span class="activity-place">
+                <a href="oficina-3.html">OF 3 - Metodologia científica para Ciências Sociais: da pergunta de pesquisa à construção do conhecimento</a>
+              </span>
+            </li>
+            <li class="activity-item">
+              <span class="activity-code">OF5</span>
+              <span class="activity-place">
+                <a href="oficina-5.html">OF 5 - Globalização e identidades socioculturais em África: reflexões a partir do norte de Moçambique</a>
+              </span>
+            </li>
+            <li class="activity-item">
+              <span class="activity-code">OF6</span>
+              <span class="activity-place">
+                <a href="oficina-6.html">OF 6 - Imagem urbana e vida cotidiana: entre o projetado e o vivido</a>
+              </span>
+            </li>
+          </ul>
         </div>
-
-        <p class="footer-description">
-          Programa de Pós-Graduação em Sociologia<br>
-          Universidade Federal de Sergipe
-        </p>
-
-        <div class="footer-contact">
-          <span>Contato</span>
-          <a href="mailto:visnsufs@gmail.com">
-            visnsufs@gmail.com
-          </a>
-        </div>
-
-       
-        <div class="social-row">
-
-  <!-- Instagram VI SNS -->
-  <a
-    href="https://instagram.com/visnsufs"
-    target="_blank"
-    rel="noopener"
-    class="social-link"
-    aria-label="Instagram VI SNS"
-  >
-    <svg viewBox="0 0 24 24">
-      <path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/>
-    </svg>
-
-    <span>@visnsufs</span>
-  </a>
-
-
-  <!-- Instagram PPGS/UFS -->
-  <a
-    href="https://instagram.com/ppgs.ufs"
-    target="_blank"
-    rel="noopener"
-    class="social-link"
-    aria-label="Instagram PPGS UFS"
-  >
-    <svg viewBox="0 0 24 24">
-      <path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/>
-    </svg>
-
-    <span>@ppgs.ufs</span>
-  </a>
-
-
-  <!-- YouTube VI SNS -->
-  <a
-    href="https://www.youtube.com/@vsnsufs2024"
-    target="_blank"
-    rel="noopener"
-    class="social-link"
-    aria-label="YouTube VI SNS"
-  >
-    <svg viewBox="0 0 24 24">
-      <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.5 12 3.5 12 3.5s-7.51 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.49 20.5 12 20.5 12 20.5s7.51 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/>
-    </svg>
-
-    <span>YouTube VI SNS</span>
-  </a>
+      </div>
+    </article>
+  </div>
+</section>
 
 </div>
-
-
-        
+</main>
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-info">
+        <div class="footer-brand">
+          <img src="images/logo-rodape.png" alt="VI Seminário Nacional de Sociologia — PPGS/UFS">
+          <div><div class="footer-label">VI SNS · 2026</div></div>
+        </div>
+        <p class="footer-description">Programa de Pós-Graduação em Sociologia<br>Universidade Federal de Sergipe</p>
+        <div class="footer-contact">
+          <span>Contato</span>
+          <a href="mailto:visnsufs@gmail.com">visnsufs@gmail.com</a>
+        </div>
+        <div class="social-row">
+          <a href="https://instagram.com/visnsufs" target="_blank" rel="noopener" class="social-link" aria-label="Instagram VI SNS">
+            <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/></svg>
+            <span>@visnsufs</span>
+          </a>
+          <a href="https://instagram.com/ppgs.ufs" target="_blank" rel="noopener" class="social-link" aria-label="Instagram PPGS UFS">
+            <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/></svg>
+            <span>@ppgs.ufs</span>
+          </a>
+          <a href="https://www.youtube.com/@vsnsufs2024" target="_blank" rel="noopener" class="social-link" aria-label="YouTube VI SNS">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.5 12 3.5 12 3.5s-7.51 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.49 20.5 12 20.5 12 20.5s7.51 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            <span>YouTube VI SNS</span>
+          </a>
+        </div>
       </div>
-
-
-      <!-- ATALHOS -->
       <div class="footer-nav">
         <h4>Atalhos</h4>
-
         <ul class="footer-link-list">
           <li><a href="index.html#inicio">Início</a></li>
           <li><a href="programacao.html">Programação</a></li>
           <li><a href="submissao.html">Submissão de Resumo</a></li>
-          <li><a href="resultados.html">Resultados</a></li>
-         <li>
-          <a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" target="_blank" rel="noopener noreferrer">
-          Inscrição
-        </a>
-        </li>
+          <li></li>
+          <li><a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" target="_blank" rel="noopener noreferrer">Inscrição</a></li>
         </ul>
       </div>
-
-
-      <!-- LOCAL -->
       <div class="footer-location">
         <h4>Local</h4>
-
-        <p>
-          Cidade Univ. Prof. José Aluísio de Campos — UFS, São Cristóvão, Sergipe
-        </p>
-
-        <a
-          href="https://maps.app.goo.gl/nXTjLvRNHsor8LBw6"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-outline"
-        >
-          Ver no Google Maps
-        </a>
+        <p>Cidade Univ. Prof. José Aluísio de Campos — UFS, São Cristóvão, Sergipe</p>
+        <a href="https://maps.app.goo.gl/nXTjLvRNHsor8LBw6" target="_blank" rel="noopener" class="btn btn-outline">Ver no Google Maps</a>
       </div>
-
     </div>
-
-
-    <!-- RODAPÉ INFERIOR -->
     <div class="foot-bottom">
-      <span>SNS · PPGS/UFS — versão beta, conteúdo em revisão.</span>
-      <span>© 2026</span>
+      <span>© 2026 · SNS · PPGS/UFS</span>
+      <span>Criado por <a href="https://www.linkedin.com/in/pauloantonioms/" target="_blank" rel="noopener noreferrer" title="LinkedIn de Paulo Martins">Paulo Martins</a></span>
     </div>
-
   </div>
 </footer>
-
-
 <script>
 const burger=document.getElementById('burger');
 const navLinks=document.getElementById('navLinks');
@@ -1650,6 +1233,5 @@ if(burger&&navLinks){
   navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('open')));
 }
 </script>
-
 </body>
 </html>

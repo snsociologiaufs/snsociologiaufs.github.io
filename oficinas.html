@@ -31,6 +31,48 @@
     font-family:'Barlow', sans-serif; font-size:16px; line-height:1.65;
     position:relative;
   }
+
+
+  /* ==========================================================
+     OFICINAS — LISTAGEM
+     ========================================================== */
+  .oficinas-page{
+    position:relative;
+    overflow:hidden;
+    background:var(--bg);
+  }
+
+  .oficinas-page > section{
+    position:relative;
+  }
+
+  .oficinas-page .page-hero{
+    background:#fff;
+    z-index:2;
+  }
+
+  .oficinas-page .oficinas-list-section{
+    position:relative;
+    overflow:hidden;
+    background:var(--bg);
+    z-index:1;
+  }
+
+  .oficinas-page .oficinas-list-section .wrap{
+    position:relative;
+    z-index:1;
+  }
+
+  .oficinas-page .session-list{
+    width:min(100%, 1060px);
+    margin-left:auto;
+  }
+
+  .oficinas-page .session-item{
+    background:rgba(255,255,255,.96);
+    box-shadow:0 10px 28px rgba(11,31,63,.045);
+  }
+
   h1,h2,h3,h4{
     font-family:'Nunito Sans', sans-serif; font-weight:800; margin:0 0 .4em 0;
     line-height:1.12; color:var(--navy); letter-spacing:-0.005em;
@@ -44,7 +86,7 @@
     display:flex; align-items:center; gap:10px; margin-bottom:.9em;
   }
   .eyebrow::before{content:""; width:20px; height:1.5px; background:var(--cyan); display:inline-block;}
-  .placeholder{color:#9A4A1F; background:rgba(154,74,31,.07); border:1px dashed rgba(154,74,31,.4); padding:0 5px; border-radius:2px;}
+  .placeholder{color:var(--text); background:none; border:0; padding:0; border-radius:0;}
 
   /* Fixed background (solid color, no texture) */
   .bg-fixed{
@@ -74,13 +116,6 @@
   section#apresentacao .prev-edition{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.15); border-left:3px solid var(--cyan);}
   section#apresentacao .prev-edition h3{color:#fff;}
   section#apresentacao .prev-edition p, section#apresentacao .prev-edition .tag{color:#C3CAE0;}
-
-  /* BETA RIBBON */
-  .beta-ribbon{
-    position:fixed; top:14px; right:-58px; background:var(--indigo); color:#fff;
-    font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:.68rem; letter-spacing:.1em;
-    padding:5px 60px; transform:rotate(38deg); z-index:999; box-shadow:0 2px 8px rgba(0,0,0,.3); pointer-events:none;
-  }
 
   /* ==========================================================
      NAVEGAÇÃO PADRONIZADA — TODAS AS PÁGINAS
@@ -475,7 +510,7 @@
   .subm-card ul{margin:.6em 0 0 0; padding-left:18px; font-size:.87rem; color:var(--text-soft);}
   .subm-card li{margin-bottom:5px;}
   .subm-card p{font-size:.87rem; color:var(--text-soft); margin:.5em 0 0 0;}
-  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:#9A4A1F; margin-top:10px; display:block;}
+  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--blue); margin-top:10px; display:block;}
 
   /* INSCRICAO */
   .insc-box{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start; background:rgba(11,31,63,.92); color:#fff; border-radius:var(--radius); padding:44px 46px; margin-top:20px;}
@@ -552,6 +587,7 @@
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} .reveal{opacity:1; transform:none; transition:none;} }
 
   /* SUBPAGES — programação detalhada */
+  /* Oficinas seguem o mesmo sistema visual das mesas-redondas. */
   .page-hero{padding:56px 0 8px 0; background:#fff;}
   .breadcrumb{
     font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:.8rem; letter-spacing:.05em;
@@ -559,16 +595,65 @@
   }
   .breadcrumb:hover{color:var(--indigo);}
 
-  .session-list{margin-top:40px; display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line);}
-  .session-item{background:#fff; padding:26px 28px; display:grid; grid-template-columns:170px 1fr; gap:22px; align-items:start;}
-  .session-item .when{font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:.78rem; letter-spacing:.06em; color:var(--indigo); text-transform:uppercase; line-height:1.5;}
-  .session-item h4{margin:0 0 .35em 0; font-size:1.08rem; color:var(--navy);}
-  .session-item p{margin:0 0 .5em 0; font-size:.9rem; color:var(--text-soft);}
+  .session-list{margin-top:38px; display:flex; flex-direction:column; gap:18px;}
+  .session-item{
+    background:rgba(255,255,255,.94);
+    padding:30px 32px;
+    display:grid;
+    grid-template-columns:132px minmax(0,1fr) auto;
+    gap:28px;
+    align-items:center;
+    border:1px solid var(--line);
+    transition:border-color .18s ease, transform .18s ease, box-shadow .18s ease;
+  }
+  .session-item:hover{
+    border-color:rgba(44,74,147,.35);
+    transform:translateY(-1px);
+    box-shadow:0 10px 28px rgba(11,31,63,.07);
+  }
+  .session-visual{
+    width:104px; height:104px; min-width:104px;
+    border-radius:50%;
+    background:var(--navy);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Nunito Sans',sans-serif;
+    font-size:1.35rem; font-weight:800;
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    box-shadow:0 14px 26px rgba(11,31,63,.12);
+  }
+  .session-main{min-width:0;}
+  .session-item .when{
+    font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:.83rem;
+    letter-spacing:.07em; color:var(--blue); text-transform:uppercase; line-height:1.45; margin-bottom:8px;
+  }
+  .session-item h4{margin:0 0 .55em 0; font-size:1.26rem; line-height:1.25; color:var(--navy);}
+  .session-item p{margin:0 0 .38em 0; font-size:.96rem; color:var(--text);}
+  .session-item p strong{color:var(--navy);}
   .session-item p:last-child{margin-bottom:0;}
-  .session-item .tag{display:inline-block; margin-top:6px; font-size:.72rem; font-family:'Barlow Condensed',sans-serif; letter-spacing:.08em; text-transform:uppercase; color:var(--cyan); font-weight:600;}
+  .session-item .tag{
+    display:inline-block; margin-top:10px; font-size:.76rem; font-family:'Barlow Condensed',sans-serif;
+    letter-spacing:.07em; text-transform:uppercase; color:var(--blue); font-weight:600;
+  }
+  .session-link{
+    align-self:center; text-decoration:none; color:var(--navy);
+    font-family:'Barlow Condensed',sans-serif; font-size:.78rem; font-weight:700;
+    letter-spacing:.06em; text-transform:uppercase; white-space:nowrap;
+    border-bottom:1px solid var(--navy); padding-bottom:3px;
+  }
+  .session-link:hover{color:var(--blue); border-color:var(--blue);}
 
-  @media (max-width:640px){
-    .session-item{grid-template-columns:1fr; gap:8px;}
+  @media (max-width:760px){
+    .session-item{grid-template-columns:86px 1fr; gap:18px; padding:24px 20px;}
+    .session-visual{width:76px; height:76px; min-width:76px; font-size:1rem; padding:0;}
+    .session-link{grid-column:2; justify-self:start; margin-top:4px;}
+    .session-item h4{font-size:1.12rem;}
+  }
+  @media (max-width:520px){
+    .session-item{grid-template-columns:1fr; gap:14px;}
+    .session-visual{width:82px; height:82px; min-width:82px;}
+    .session-link{grid-column:1;}
   }
 
 
@@ -782,258 +867,580 @@
     }
   }
 
+/* === PADRÃO INDEX: MENU + RODAPÉ === */
+  /* NAV */
+  header.site-nav{position:sticky; top:0; z-index:100; background:rgba(245,246,249,.94); backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1140px; margin:0 auto; padding:14px 28px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--navy);}
+  .brand-num{font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:1.7rem; color:var(--indigo); line-height:1;}
+  .brand-text{font-family:'Nunito Sans',sans-serif; font-weight:800; font-size:.86rem; line-height:1.2; color:var(--navy);}
+  .brand-text span{display:block; font-family:'Barlow Condensed',sans-serif; font-weight:500; font-size:.66rem; letter-spacing:.08em; color:var(--text-soft); text-transform:uppercase; margin-top:2px;}
+  .brand-logo{
+  height:38px;      /* ajuste a altura conforme o tamanho do seu logo */
+  width:auto;
+  display:block;
+}
+  nav.links{display:flex; gap:22px; align-items:center; flex-wrap:wrap;}
+  nav.links a{text-decoration:none; color:var(--navy); font-weight:500; font-size:.85rem; position:relative; padding:4px 0;}
+  nav.links a::after{content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px; background:var(--cyan); transition:width .2s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{background:var(--navy); color:#fff!important; padding:9px 18px!important; border-radius:var(--radius); font-size:.78rem!important; font-weight:600!important; text-transform:uppercase; letter-spacing:.05em;}
+  .nav-cta::after{display:none;}
+  .burger{display:none; background:none; border:1.5px solid var(--navy); border-radius:4px; width:38px; height:34px; cursor:pointer; flex-direction:column; align-items:center; justify-content:center; gap:5px;}
+  .burger span{width:18px; height:2px; background:var(--navy); display:block;}
+
+  /* Dropdown — Programação
+     Usa <details>/<summary> para abrir e fechar sem JavaScript. */
+  .nav-item{
+    position:relative;
+    display:block;
+  }
+
+  .nav-item summary{
+    list-style:none;
+    cursor:pointer;
+    color:var(--navy);
+    font-weight:500;
+    font-size:.85rem;
+    position:relative;
+    padding:4px 0;
+    user-select:none;
+  }
+
+  .nav-item summary::-webkit-details-marker{display:none;}
+  .nav-item summary::marker{content:"";}
+
+  .nav-item .caret{
+    display:inline-block;
+    font-size:.62em;
+    margin-left:3px;
+    transform:translateY(-1px);
+    transition:transform .16s ease;
+  }
+
+  .nav-item[open] .caret{
+    transform:translateY(-1px) rotate(180deg);
+  }
+
+  .dropdown{
+    position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(4px);
+    min-width:220px; background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    box-shadow:0 16px 36px rgba(11,31,63,.16); padding:18px 0 8px 0;
+    opacity:0; visibility:hidden; pointer-events:none;
+    transition:opacity .16s ease, transform .16s ease, visibility .16s ease;
+    z-index:60;
+  }
+
+  .nav-item[open] .dropdown,
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown{
+    display:block;
+    opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); pointer-events:auto;
+  }
+
+  nav.links .dropdown a{display:block; padding:10px 20px; font-size:.84rem; color:var(--text); font-weight:500; white-space:nowrap;}
+  nav.links .dropdown a::after{display:none;}
+  nav.links .dropdown a:hover{background:var(--bg); color:var(--indigo);}
+
+  /* ======================================================================
+     AVISO IMPORTANTE DO SITE
+     ----------------------------------------------------------------------
+     Controle rápido no :root:
+       --aviso-display:block;  -> mostra o aviso
+       --aviso-display:none;   -> esconde o aviso
+
+     Para alterar a mensagem, procure no HTML por "AVISO IMPORTANTE".
+     ====================================================================== */
+  .site-alert{
+    display:var(--aviso-display);
+    background:#FFF7E8;
+    border-bottom:1px solid #E7C98E;
+  }
+
+  .site-alert-content{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:13px 0;
+  }
+
+  .site-alert-label{
+    flex-shrink:0;
+    font-family:'Barlow Condensed',sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#fff;
+    background:#A85F16;
+    padding:5px 9px;
+    border-radius:2px;
+  }
+
+  .site-alert p{
+    margin:0;
+    flex:1;
+    color:var(--navy);
+    font-size:.9rem;
+    line-height:1.45;
+  }
+
+  .site-alert a{
+    flex-shrink:0;
+    color:var(--navy);
+    font-size:.82rem;
+    font-weight:600;
+    text-decoration:none;
+    border-bottom:1px solid var(--navy);
+  }
+
+  .site-alert a:hover{
+    color:var(--indigo);
+    border-color:var(--indigo);
+  }
+
+  @media (max-width:760px){
+    .site-alert-content{
+      flex-direction:column;
+      align-items:flex-start;
+      gap:8px;
+      padding:14px 0;
+    }
+  }
+
+
+/* FOOTER */
+  
+
+/* FOOTER */
+footer {
+  background: rgba(5,11,24,.95);
+  color: #DCE1F0;
+  padding: 56px 0 26px;
+  position: relative;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr .8fr;
+  align-items: start;
+  gap: 48px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+/* Logo e identificação */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.footer-brand img {
+  height: 46px;
+  width: auto;
+  display: block;
+}
+
+.footer-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--cyan);
+}
+
+/* Descrição */
+.footer-description {
+  max-width: 42ch;
+  color: #9AA4C4;
+  font-size: .9rem;
+  margin: .4rem 0 1.4rem;
+}
+
+/* Contato */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 14px;
+}
+
+.footer-contact span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #C3CAE0;
+}
+
+.footer-contact a {
+  color: #fff;
+  font-size: .9rem;
+  text-decoration: none;
+}
+
+/* Títulos */
+footer h4 {
+  color: #fff;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+/* Atalhos */
+.footer-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link-list li {
+  margin: 8px 0;
+}
+
+.footer-link-list a {
+  color: #C3CAE0;
+  text-decoration: none;
+  font-size: .88rem;
+}
+
+.footer-link-list a:hover {
+  color: #fff;
+}
+
+/* Local */
+.footer-location p {
+  color: #C3CAE0;
+  font-size: .88rem;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+.footer-location .btn {
+  margin-left: 0;
+}
+
+/* Redes sociais */
+
+.social-row{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:14px;
+}
+
+.social-link{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  width:auto;
+  height:auto;
+  color:#C3CAE0;
+  text-decoration:none;
+  font-size:.84rem;
+}
+
+.social-link svg{
+  width:18px;
+  height:18px;
+  fill:#fff;
+  flex-shrink:0;
+}
+
+.social-link:hover{
+  color:#fff;
+}
+
+/* Parte inferior */
+.foot-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .72rem;
+  color: #77809E;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Celular */
+@media (max-width: 760px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .foot-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+/* Ajustes de navegação para páginas internas — iguais ao index */
+@media (max-width:900px){
+  nav.links{position:fixed; top:64px; left:0; right:0; background:var(--bg); flex-direction:column; padding:20px 28px; border-bottom:1px solid var(--line); display:none; gap:16px; align-items:flex-start; max-height:calc(100vh - 64px); overflow-y:auto;}
+  nav.links.open{display:flex;}
+  .burger{display:flex;}
+  .nav-item{width:100%; display:block;}
+  .nav-item summary{width:100%; padding:0; font-size:.85rem;}
+  .nav-item:not([open]) .dropdown{display:none;}
+  .nav-item[open] .dropdown{position:static; display:flex; opacity:1; visibility:visible; pointer-events:auto; transform:none; box-shadow:none; border:none; border-left:2px solid var(--line); padding:4px 0 4px 16px; margin:10px 0 0 0; flex-direction:column; gap:10px; width:100%; background:transparent;}
+  nav.links .dropdown a{padding:0; font-size:.82rem; color:var(--text-soft);}
+  nav.links .dropdown a:hover{background:transparent; color:var(--indigo);}
+}
+
+
+</style>
+
+<style id="site-standardization">
+/* Menu e rodapé padronizados */
+header.site-nav{position:sticky;top:0;z-index:100;background:rgba(245,246,249,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+.nav-inner{max-width:1140px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
+.brand-logo{height:38px;width:auto;display:block;}
+nav.links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+nav.links>a,.nav-item>summary{color:var(--navy);text-decoration:none;font-size:.85rem;font-weight:500;white-space:nowrap;cursor:pointer;list-style:none;}
+.nav-item>summary::-webkit-details-marker{display:none}.nav-item>summary::marker{content:"";}
+nav.links>a{position:relative;padding:4px 0;}
+nav.links>a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--cyan);transition:width .2s ease;}
+nav.links>a:hover::after{width:100%;}
+.nav-cta{background:var(--navy);color:#fff!important;padding:9px 18px!important;border-radius:var(--radius);font-size:.78rem!important;font-weight:600!important;text-transform:uppercase;letter-spacing:.05em;}
+.nav-cta::after{display:none!important;}
+.burger{display:none;background:none;border:1.5px solid var(--navy);border-radius:4px;width:38px;height:34px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
+.burger span{width:18px;height:2px;background:var(--navy);display:block;}
+.nav-item{position:relative;display:block;}
+.nav-item .caret{display:inline-block;font-size:.62em;margin-left:3px;transform:translateY(-1px);transition:transform .16s ease;}
+.nav-item[open] .caret{transform:translateY(-1px) rotate(180deg);}
+.dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);min-width:220px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 36px rgba(11,31,63,.16);padding:8px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:80;}
+.nav-item[open] .dropdown,.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{display:block;opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto;}
+nav.links .dropdown a{display:block;padding:9px 18px;font-size:.82rem;color:var(--text);font-weight:500;white-space:nowrap;text-decoration:none;}
+nav.links .dropdown a::after{display:none;}nav.links .dropdown a:hover{background:var(--bg);color:var(--indigo);}
+footer{background:#050B18;color:#DCE1F0;padding:56px 0 26px;position:relative;}
+.footer-top{display:grid;grid-template-columns:1.4fr .8fr .8fr;align-items:start;gap:48px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14);}
+.footer-top>*{min-width:0}.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:12px}.footer-brand img{height:46px;width:auto;display:block}.footer-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan)}
+.footer-description{max-width:42ch;color:#9AA4C4;font-size:.9rem;margin:.4rem 0 1.4rem}.footer-contact{display:flex;flex-direction:column;gap:2px;margin-bottom:14px}.footer-contact span{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#C3CAE0}.footer-contact a{color:#fff;font-size:.9rem;text-decoration:none;overflow-wrap:anywhere}
+footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font-weight:700;margin:0 0 16px}.footer-link-list{list-style:none;padding:0;margin:0}.footer-link-list li{margin:8px 0}.footer-link-list a{color:#C3CAE0;text-decoration:none;font-size:.88rem}.footer-link-list a:hover{color:#fff}.footer-location p{color:#C3CAE0;font-size:.88rem;line-height:1.6;margin:0 0 16px}.footer-location .btn{margin-left:0}
+.social-row{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:14px}.social-link{display:flex;align-items:center;gap:9px;width:auto;height:auto;color:#C3CAE0;text-decoration:none;font-size:.84rem}.social-link svg{width:18px;height:18px;fill:#fff;flex-shrink:0}.social-link:hover{color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;color:#77809E}.foot-bottom a{color:#9AA4C4;text-decoration:none;border-bottom:1px solid transparent;transition:color .15s ease,border-color .15s ease}.foot-bottom a:hover{color:#fff;border-bottom-color:#fff}
+@media(max-width:900px){nav.links{position:fixed;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 28px;border-bottom:1px solid var(--line);display:none;gap:16px;align-items:flex-start;max-height:calc(100vh - 64px);overflow-y:auto}nav.links.open{display:flex}.burger{display:flex}.nav-item{width:100%;display:block}.nav-item>summary{width:100%;padding:0}.nav-item:not([open]) .dropdown{display:none}.nav-item[open] .dropdown{position:static;display:flex;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-left:2px solid var(--line);padding:4px 0 4px 16px;margin:10px 0 0;flex-direction:column;gap:10px;width:100%;background:transparent}nav.links .dropdown a{padding:0;color:var(--text-soft)}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.footer-top{grid-template-columns:1fr;gap:36px}.foot-bottom{flex-direction:column;align-items:flex-start}}
+@media(max-width:460px){.nav-inner{padding-left:18px;padding-right:18px}.brand-logo{height:34px}}
 </style>
 </head>
 <body>
 
 <div class="bg-fixed" aria-hidden="true"></div>
-<div class="beta-ribbon">VERSÃO BETA</div>
-
 <header class="site-nav">
   <div class="nav-inner">
-
     <a href="index.html#inicio" class="brand">
-      <img
-        src="images/logo-topo.png"
-        alt="VI Seminário Nacional de Sociologia — PPGS · UFS"
-        class="brand-logo"
-      >
+      <img src="images/logo-topo.png" alt="VI Seminário Nacional de Sociologia — PPGS · UFS" class="brand-logo">
     </a>
-
-    <!-- MENU DESKTOP -->
-    <nav class="desktop-nav" aria-label="Navegação principal">
-
+    <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+    <nav class="links" id="navLinks" aria-label="Navegação principal">
       <a href="index.html#inicio">Início</a>
       <a href="index.html#cronograma">Cronograma</a>
-
       <details class="nav-item">
-        <summary>
-          Programação
-          <span class="caret">▾</span>
-        </summary>
-
+        <summary>Programação <span class="caret">▾</span></summary>
         <div class="dropdown">
           <a href="programacao.html">Programação geral</a>
           <a href="conferencias.html">Conferências</a>
           <a href="gts.html">Grupos de Trabalho</a>
           <a href="mesas.html">Mesas-redondas</a>
-          <a href="oficinas.html" class="current-page">Oficinas</a>
-          <a href="webinar.html">Webinar</a>
+          <a href="oficinas.html">Oficinas</a>
         </div>
       </details>
-
-      <a href="index.html#submissoes">Submissão de Resumo</a>
-      <a href="index.html#comissao">Comissão</a>
-      <a href="index.html#apoio">Apoio &amp; Links</a>
-      <a href="resultados.html">Resultados</a>
-      <a href="index.html#inscricao" class="nav-cta">Inscrição</a>
-
+      <a href="submissao.html">Submissão de Resumo</a>
+      
+      <a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" class="nav-cta" target="_blank" rel="noopener noreferrer">Inscrição</a>
     </nav>
-
-    <!-- MENU MOBILE — sem JavaScript -->
-    <details class="mobile-nav">
-      <summary aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </summary>
-
-      <nav class="mobile-menu-panel" aria-label="Navegação mobile">
-
-        <a href="index.html#inicio">Início</a>
-        <a href="index.html#cronograma">Cronograma</a>
-
-        <details class="mobile-submenu">
-          <summary>
-            Programação
-            <span class="caret">▾</span>
-          </summary>
-
-          <div class="mobile-submenu-links">
-            <a href="programacao.html">Visão geral</a>
-            <a href="conferencias.html">Conferências</a>
-            <a href="gts.html">Grupos de Trabalho</a>
-            <a href="mesas.html">Mesas-redondas</a>
-            <a href="oficinas.html" class="current-page">Oficinas</a>
-            <a href="webinar.html">Webinar</a>
-          </div>
-        </details>
-
-        <a href="index.html#submissoes">Submissão de Resumo</a>
-        <a href="index.html#comissao">Comissão</a>
-        <a href="index.html#apoio">Apoio &amp; Links</a>
-        <a href="resultados.html">Resultados</a>
-        <a href="index.html#inscricao">Inscrição</a>
-
-      </nav>
-    </details>
-
   </div>
 </header>
 
+<main class="oficinas-page">
 <section class="page-hero">
   <div class="wrap reveal">
     <a href="index.html#programacao" class="breadcrumb">&larr; Voltar para Programação</a>
     <span class="eyebrow">Programação · Oficinas</span>
     <h1>Oficinas</h1>
-    <p class="lede" style="max-width:62ch; color:var(--text-soft);">Atividades de caráter prático e participativo, voltadas ao <strong>desenvolvimento de conhecimentos, técnicas e/ou habilidades específicas.</strong> </p>
+    <p class="lede" style="max-width:62ch; color:var(--text-soft);">Atividades de caráter prático e participativo, voltadas ao <strong>desenvolvimento de conhecimentos, técnicas e/ou habilidades específicas.</strong></p>
   </div>
 </section>
 
-<section>
+<section class="oficinas-list-section">
   <div class="wrap reveal">
     <div class="session-list">
-      <div class="session-item">
-        <div class="when">09/11 &middot; 11h30 &ndash; 13h</div>
-        <div>
-          <h4 class="placeholder">Título da oficina a definir</h4>
-          <p><strong>Ministrante:</strong> <span class="placeholder">Nome</span></p>
-          <p><strong>Vagas:</strong> <span class="placeholder">A definir</span></p>
-          <span class="tag">Sala a definir</span>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF1</div>
+        <div class="session-main">
+          <div class="when">10/11 (11h30 - 13h) · 11/11 (11h30 - 13h)</div>
+          <h4>OF 1 - Introdução à Sociologia Digital</h4>
+          <p>Coordenador: Doutorando Ítalo Gordiano (PPGS/UFS – LEMOS)</p>
+          <p>Presencial, 2 dias</p>
+          <p><strong>10/11:</strong> Presencial, sala 3</p>
+          <p><strong>11/11:</strong> Presencial, sala 1</p>
         </div>
-      </div>
-      <div class="session-item">
-        <div class="when">10/11 &middot; 11h30 &ndash; 13h</div>
-        <div>
-          <h4 class="placeholder">Título da oficina a definir</h4>
-          <p><strong>Ministrante:</strong> <span class="placeholder">Nome</span></p>
-          <p><strong>Vagas:</strong> <span class="placeholder">A definir</span></p>
-          <span class="tag">Sala a definir</span>
+        <a class="session-link" href="oficina-1.html" aria-label="Ver detalhes da Oficina 1">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF2</div>
+        <div class="session-main">
+          <div class="when">09/11 (11h30 - 13h) · 10/11 (11h30 - 13h)</div>
+          <h4>OF 2 - UM CORPO NO MUNDO - UM CORPO NO CAMPO: O que mais entra em campo quando a Sociologia se apresenta?</h4>
+          <p>Coordenadoras: Doutoranda Amanda Beatriz Martins Silva (PPGS-UFS) e Doutoranda Delorrana Lima Machado (PPGS-UFS)</p>
+          <p>Presencial, 2 dias</p>
+          <p><strong>09/11:</strong> Presencial, sala 2</p>
+          <p><strong>10/11:</strong> Presencial, sala 2</p>
         </div>
-      </div>
+        <a class="session-link" href="oficina-2.html" aria-label="Ver detalhes da Oficina 2">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF3</div>
+        <div class="session-main">
+          <div class="when">Programação a definir</div>
+          <h4>OF 3 - Metodologia científica para Ciências Sociais: da pergunta de pesquisa à construção do conhecimento</h4>
+          <p>Coordenadora: Doutoranda Ludmilla Silva de Oliveira (PPGS/UFS)</p>
+          <p>Presencial, 2 dias</p>
+
+        </div>
+        <a class="session-link" href="oficina-3.html" aria-label="Ver detalhes da Oficina 3">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF4</div>
+        <div class="session-main">
+          <div class="when">10/11 (11h30 - 13h) · 11/11 (11h30 - 13h)</div>
+          <h4>OF 4 - DINÂMICAS PARTIDÁRIAS: DIREITA, RELIGIÃO E MILITARISMO</h4>
+          <p>Coordenadoras: Doutoranda Luciana Tourinho Prata (PPGS/UFS) e Doutoranda Mirela de Jesus Gerônimo (PPGS/UFS)</p>
+          <p>Presencial, 2 dias</p>
+          <p><strong>10/11:</strong> Presencial, alguma sala milagrosa</p>
+          <p><strong>11/11:</strong> Presencial, 2</p>
+        </div>
+        <a class="session-link" href="oficina-4.html" aria-label="Ver detalhes da Oficina 4">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF5</div>
+        <div class="session-main">
+          <div class="when">Programação a definir</div>
+          <h4>OF 5 - Globalização e identidades socioculturais em África: reflexões a partir do norte de Moçambique</h4>
+          <p>Coordenador: Doutorando Bié Mário Aide (PPGS/UFS)</p>
+
+        </div>
+        <a class="session-link" href="oficina-5.html" aria-label="Ver detalhes da Oficina 5">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF6</div>
+        <div class="session-main">
+          <div class="when">Programação a definir</div>
+          <h4>OF 6 - Imagem urbana e vida cotidiana: entre o projetado e o vivido</h4>
+          <p>Coordenadoras: Doutoranda Adriana Alves dos Santos (PPGS/UFS), Doutoranda Felícia Clark Nunes Teles (PPGS/UFS) e Doutoranda Tatiana Silva Sales (PPGS/UFS)</p>
+          <p>Presencial, 3 dias</p>
+
+        </div>
+        <a class="session-link" href="oficina-6.html" aria-label="Ver detalhes da Oficina 6">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF7</div>
+        <div class="session-main">
+          <div class="when">09/11 (11h30 - 13h) · 10/11 (11h30 - 13h) · 11/11 (11h30 - 13h)</div>
+          <h4>OF 7 - Etnografar a Vulnerabilidade: a afetação, a escuta e o registro</h4>
+          <p>Coordenadores: Doutorando Bruno Henrique Souza de Jesus (PPGS/UFS/LABEURC/SOCIOFILO), Doutorando Lucas Vieira Santos Silva (PPGS/UFS/GERTs/JOVIS/INTERSOL) e Doutoranda Raiane de Jesus Santos (PPGS/UFS/GERTs)</p>
+          <p>Presencial, 3 dias</p>
+          <p><strong>09/11:</strong> Presencial, sala do PPGS</p>
+          <p><strong>10/11:</strong> Presencial, sala do PPGS</p>
+          <p><strong>11/11:</strong> Presencial, sala do PPGS</p>
+        </div>
+        <a class="session-link" href="oficina-7.html" aria-label="Ver detalhes da Oficina 7">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF8</div>
+        <div class="session-main">
+          <div class="when">09/11 (11h30 - 13h) · 10/11 (11h30 - 13h)</div>
+          <h4>OF 8 - Como estudar as eleições no Brasil? Representatividade e comunicação política</h4>
+          <p>Coordenadores: Doutorando Carlos Henrique Filgueiras Prata de Almeida (PPGS/UFS), Doutorando Leonardo Almeida de Jesus (PPGS/UFS), Doutoranda Izabel Cristina Custódio Santos (PPGS/UFS), Doutoranda Bárbara Vitória Oliveira Castro (PPGS/UFS), Mestranda Vanessa Silva da Anunciação</p>
+          <p>Presencial, 2 dias</p>
+          <p><strong>09/11:</strong> Presencial, sala 1</p>
+          <p><strong>10/11:</strong> Presencial, sala 1</p>
+        </div>
+        <a class="session-link" href="oficina-8.html" aria-label="Ver detalhes da Oficina 8">Ver detalhes</a>
+      </article>
+      <article class="session-item">
+        <div class="session-visual oficina-badge" aria-hidden="true">OF9</div>
+        <div class="session-main">
+          <div class="when">09/11 (11h30 - 13h)</div>
+          <h4>OF 9 - O Grindr como heterotopia: a homossociabilidade no espaço digital</h4>
+          <p>Coordenadores: Alana Maria Passos Barreto (UFS) e Matheus de Souza Silva (UFPR)</p>
+          <p>Presencial, 1 dia</p>
+          <p><strong>09/11:</strong> Presencial, sala 3</p>
+        </div>
+        <a class="session-link" href="oficina-9.html" aria-label="Ver detalhes da Oficina 9">Ver detalhes</a>
+      </article>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap">
-
     <div class="footer-top">
-
-      <!-- EVENTO / CONTATO -->
       <div class="footer-info">
-
         <div class="footer-brand">
-          <img
-            src="images/logo-rodape.png"
-            alt="VI Seminário Nacional de Sociologia — PPGS/UFS"
-          >
-
-          <div>
-            <div class="footer-label">VI SNS · 2026</div>
-          </div>
+          <img src="images/logo-rodape.png" alt="VI Seminário Nacional de Sociologia — PPGS/UFS">
+          <div><div class="footer-label">VI SNS · 2026</div></div>
         </div>
-
-        <p class="footer-description">
-          Programa de Pós-Graduação em Sociologia<br>
-          Universidade Federal de Sergipe
-        </p>
-
+        <p class="footer-description">Programa de Pós-Graduação em Sociologia<br>Universidade Federal de Sergipe</p>
         <div class="footer-contact">
           <span>Contato</span>
-          <a href="mailto:visnsufs@gmail.com">
-            visnsufs@gmail.com
+          <a href="mailto:visnsufs@gmail.com">visnsufs@gmail.com</a>
+        </div>
+        <div class="social-row">
+          <a href="https://instagram.com/visnsufs" target="_blank" rel="noopener" class="social-link" aria-label="Instagram VI SNS">
+            <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/></svg>
+            <span>@visnsufs</span>
+          </a>
+          <a href="https://instagram.com/ppgs.ufs" target="_blank" rel="noopener" class="social-link" aria-label="Instagram PPGS UFS">
+            <svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/></svg>
+            <span>@ppgs.ufs</span>
+          </a>
+          <a href="https://www.youtube.com/@vsnsufs2024" target="_blank" rel="noopener" class="social-link" aria-label="YouTube VI SNS">
+            <svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.5 12 3.5 12 3.5s-7.51 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.49 20.5 12 20.5 12 20.5s7.51 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg>
+            <span>YouTube VI SNS</span>
           </a>
         </div>
-
-       
-        <div class="social-row">
-
-  <!-- Instagram VI SNS -->
-  <a
-    href="https://instagram.com/visnsufs"
-    target="_blank"
-    rel="noopener"
-    class="social-link"
-    aria-label="Instagram VI SNS"
-  >
-    <svg viewBox="0 0 24 24">
-      <path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/>
-    </svg>
-
-    <span>@visnsufs</span>
-  </a>
-
-
-  <!-- Instagram PPGS/UFS -->
-  <a
-    href="https://instagram.com/ppgs.ufs"
-    target="_blank"
-    rel="noopener"
-    class="social-link"
-    aria-label="Instagram PPGS UFS"
-  >
-    <svg viewBox="0 0 24 24">
-      <path d="M12 2c2.7 0 3.05.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.07.06 1.41.06 4.13s-.01 3.05-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.07.05-1.41.06-4.12.06s-3.05-.01-4.12-.06c-.87-.04-1.56-.13-2.14-.31a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76a4.9 4.9 0 0 1 1.76-1.15c.64-.25 1.37-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.4-8.4a1.17 1.17 0 1 0 0-2.34 1.17 1.17 0 0 0 0 2.34z"/>
-    </svg>
-
-    <span>@ppgs.ufs</span>
-  </a>
-
-
-  <!-- YouTube VI SNS -->
-  <a
-    href="https://www.youtube.com/@vsnsufs2024"
-    target="_blank"
-    rel="noopener"
-    class="social-link"
-    aria-label="YouTube VI SNS"
-  >
-    <svg viewBox="0 0 24 24">
-      <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.51 3.5 12 3.5 12 3.5s-7.51 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14C4.49 20.5 12 20.5 12 20.5s7.51 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.81zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/>
-    </svg>
-
-    <span>YouTube VI SNS</span>
-  </a>
-
-</div>
-
-
-        
       </div>
-
-
-      <!-- ATALHOS -->
       <div class="footer-nav">
         <h4>Atalhos</h4>
-
         <ul class="footer-link-list">
           <li><a href="index.html#inicio">Início</a></li>
-          <li><a href="index.html#programacao">Programação</a></li>
-          <li><a href="index.html#resultados">Resultados</a></li>
-          <li><a href="index.html#inscricao">Inscrição</a></li>
+          <li><a href="programacao.html">Programação</a></li>
+          <li><a href="submissao.html">Submissão de Resumo</a></li>
+          <li></li>
+          <li><a href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" target="_blank" rel="noopener noreferrer">Inscrição</a></li>
         </ul>
       </div>
-
-
-      <!-- LOCAL -->
       <div class="footer-location">
         <h4>Local</h4>
-
-        <p>
-          Didática VII — UFS<br>
-          São Cristóvão, Sergipe
-        </p>
-
-        <a
-          href="https://maps.app.goo.gl/8ikUXxegfczGUgFb9?g_st=ac"
-          target="_blank"
-          rel="noopener"
-          class="btn btn-outline"
-        >
-          Ver no Google Maps
-        </a>
+        <p>Cidade Univ. Prof. José Aluísio de Campos — UFS, São Cristóvão, Sergipe</p>
+        <a href="https://maps.app.goo.gl/nXTjLvRNHsor8LBw6" target="_blank" rel="noopener" class="btn btn-outline">Ver no Google Maps</a>
       </div>
-
     </div>
-
-
-    <!-- RODAPÉ INFERIOR -->
     <div class="foot-bottom">
-      <span>SNS · PPGS/UFS — versão beta, conteúdo em revisão.</span>
-      <span>© 2026</span>
+      <span>© 2026 · SNS · PPGS/UFS</span>
+      <span>Criado por <a href="https://www.linkedin.com/in/pauloantonioms/" target="_blank" rel="noopener noreferrer" title="LinkedIn de Paulo Martins">Paulo Martins</a></span>
     </div>
-
   </div>
 </footer>
 
@@ -1054,5 +1461,13 @@
   });
 </script>
 
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+  }
+</script>
 </body>
 </html>

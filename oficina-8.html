@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupos de Trabalho — VI Seminário Nacional de Sociologia</title>
+<title>OF 8 - Como estudar as eleições no Brasil? Representatividade e comunicação política — VI Seminário Nacional de Sociologia</title>
 <meta name="description" content="VI Seminário Nacional de Sociologia do PPGS/UFS. Os desafios da Sociologia e democracia em um mundo digital. Cronograma, programação e inscrições.">
 <link rel="icon" type="image/png" href="images/logo-web1.png?v=2">
 <link rel="apple-touch-icon" href="images/logo-web1.png?v=2">
@@ -31,6 +31,7 @@
     font-family:'Barlow', sans-serif; font-size:16px; line-height:1.65;
     position:relative;
   }
+
   h1,h2,h3,h4{
     font-family:'Nunito Sans', sans-serif; font-weight:800; margin:0 0 .4em 0;
     line-height:1.12; color:var(--navy); letter-spacing:-0.005em;
@@ -468,7 +469,7 @@
   .subm-card ul{margin:.6em 0 0 0; padding-left:18px; font-size:.87rem; color:var(--text-soft);}
   .subm-card li{margin-bottom:5px;}
   .subm-card p{font-size:.87rem; color:var(--text-soft); margin:.5em 0 0 0;}
-  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:var(--blue); margin-top:10px; display:block;}
+  .subm-note{font-family:'Barlow Condensed',sans-serif; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; color:#9A4A1F; margin-top:10px; display:block;}
 
   /* INSCRICAO */
   .insc-box{display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:start; background:rgba(11,31,63,.92); color:#fff; border-radius:var(--radius); padding:44px 46px; margin-top:20px;}
@@ -570,14 +571,13 @@
   }
   .session-visual{
     width:104px; height:104px; border-radius:50%;
-    overflow:hidden;
     border:2px solid var(--blue);
     background:var(--bg-alt);
-    display:block;
-  }
-  .session-visual img{
-    width:100%; height:100%; display:block;
-    object-fit:cover; object-position:center;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--blue);
+    font-family:'Barlow Condensed',sans-serif; font-size:.67rem; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; text-align:center; line-height:1.25;
+    padding:16px;
   }
   .session-main{min-width:0;}
   .session-item .when{
@@ -822,6 +822,7 @@
       align-items:flex-start;
     }
   }
+
 
 /* === PADRÃO INDEX: MENU + RODAPÉ === */
   /* NAV */
@@ -1161,25 +1162,35 @@ footer h4 {
 }
 
 
+  /* PROGRAMAÇÃO DA OFICINA — estrutura linear, sem cartões decorativos */
+  .oficina-schedule{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);max-width:76ch;}
+  .oficina-schedule h2{margin-top:0;}
+  .oficina-schedule-row{display:grid;grid-template-columns:88px 120px minmax(0,1fr);gap:18px;padding:11px 0;border-bottom:1px solid var(--line);align-items:start;}
+  .oficina-schedule-row:last-child{border-bottom:none;}
+  .oficina-schedule-row strong{font-family:'Barlow Condensed',sans-serif;color:var(--navy);font-size:.88rem;}
+  .oficina-schedule-row span{color:var(--text);}
+  @media(max-width:620px){.oficina-schedule-row{grid-template-columns:1fr;gap:2px;padding:14px 0;}}
+</style>
 
-  /* ===== GTs — adaptação do visual das Mesas ===== */
-  .session-visual.gt-badge{
-    width:112px; height:112px; min-width:112px;
-    border-radius:50%;
-    display:flex; align-items:center; justify-content:center;
-    background:var(--navy);
-    color:#fff;
-    font-family:'Nunito Sans',sans-serif;
-    font-weight:800;
-    font-size:1.45rem;
-    letter-spacing:.02em;
-  }
-  .session-main h4{max-width:850px;}
-  .gt-days{font-size:.94rem; color:var(--text-soft);}
-  @media (max-width:700px){
-    .session-visual.gt-badge{width:86px;height:86px;min-width:86px;font-size:1.15rem;}
-  }
+<style>
+  .oficina-detail{background:rgba(255,255,255,.96);padding:36px 0 76px;position:relative;}
+  .oficina-detail-grid{display:grid;grid-template-columns:180px minmax(0,1fr);gap:42px;align-items:start;}
+  .oficina-detail-visual{width:150px;height:150px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:2rem;letter-spacing:.02em;box-shadow:0 18px 36px rgba(11,31,63,.16);}
+  .oficina-meta{display:flex;flex-wrap:wrap;gap:10px 22px;padding-bottom:22px;margin-bottom:28px;border-bottom:1px solid var(--line);}
+  .oficina-meta span{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.07em;font-size:.78rem;font-weight:600;color:var(--blue);}
+  .oficina-detail h2{font-size:1.16rem;margin:32px 0 12px;}
+  .oficina-detail p{font-size:1rem;color:var(--text);max-width:76ch;}
+  .oficina-people{display:grid;grid-template-columns:1fr 1fr;gap:18px 34px;margin-top:12px;}
+  .oficina-person{padding:14px 0;border-top:1px solid var(--line);}
+  .oficina-person strong{display:block;color:var(--navy);}
+  .back-link{display:inline-block;margin-top:34px;text-decoration:none;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;border-bottom:1px solid var(--navy);}
+  @media(max-width:720px){.oficina-detail-grid{grid-template-columns:1fr;gap:24px}.oficina-detail-visual{width:110px;height:110px;font-size:1.35rem}.oficina-people{grid-template-columns:1fr}}
 
+  /* Texto de apresentação da oficina justificado */
+  .oficina-detail h2 + p{
+    text-align:justify;
+    text-justify:inter-word;
+  }
 </style>
 
 <style id="site-standardization">
@@ -1217,9 +1228,7 @@ footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font
 @media(max-width:460px){.nav-inner{padding-left:18px;padding-right:18px}.brand-logo{height:34px}}
 </style>
 </head>
-<body>
-
-<div class="bg-fixed" aria-hidden="true"></div>
+<body><div class="bg-fixed" aria-hidden="true"></div>
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html#inicio" class="brand">
@@ -1246,105 +1255,59 @@ footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font
   </div>
 </header>
 
+
 <section class="page-hero">
   <div class="wrap reveal">
-    <a href="index.html#programacao" class="breadcrumb">&larr; Voltar para Programação</a>
-    <span class="eyebrow">Programação · GTs</span>
-    <h1>Grupos de Trabalho</h1>
-    <p class="lede" style="max-width:62ch; color:var(--text-soft);">Espaço destinado à apresentação e discussão de pesquisas, organizado por eixos temáticos ao longo dos três dias do evento.</p>
+    <a href="oficinas.html" class="breadcrumb">&larr; Voltar para Oficinas</a>
+    <span class="eyebrow">Programação · Oficina 8</span>
+    <h1>OF 8 - Como estudar as eleições no Brasil? Representatividade e comunicação política</h1>
   </div>
 </section>
 
-<section>
+<section class="oficina-detail">
   <div class="wrap reveal">
-    <div class="session-list">
-      <article class="session-item">
-        <div class="session-visual gt-badge" aria-hidden="true">GT 1</div>
-        <div class="session-main">
-          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
-          <h4>GT 1 — Sociedade e Vida Econômica</h4>
-          <p><strong>Coordenadoras:</strong> Profa. Marina de Souza Sartore e Ma. Amanda Beatriz Martins Silva</p>
-          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
-          <span class="tag">Remoto</span>
+    <div class="oficina-detail-grid">
+      <div class="oficina-detail-visual" aria-hidden="true">OF8</div>
+      <div>
+        <div class="oficina-meta">
+          <span>09/11 · 10/11</span>
+          <span>11h30 - 13h</span>
+          <span>Presencial, 2 dias</span>
         </div>
-        <a class="session-link" href="gt-1.html" aria-label="Ver detalhes do GT 1">Ver detalhes</a>
-      </article>
 
-      <article class="session-item">
-        <div class="session-visual gt-badge" aria-hidden="true">GT 2</div>
-        <div class="session-main">
-          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
-          <h4>GT 2 — Sociologia Urbana</h4>
-          <p><strong>Coordenadores:</strong> Prof. Dr. Eder Malta; Prof. Dr. Ewerthon Vieira</p>
-          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
-          <span class="tag">Presencial</span>
-        </div>
-        <a class="session-link" href="gt-2.html" aria-label="Ver detalhes do GT 2">Ver detalhes</a>
-      </article>
+        <h2>Resumo</h2>
+        <p>Pensando nos dilemas da pesquisa sobre eleições no Brasil, a oficina propõe uma imersão teórico-metodológica para desvendar as engrenagens da disputa política, ofertando aos discentes um procedimento analítico que vê o processo eleitoral como palco de disputas ativas por visibilidade, classificação e legitimidade, onde recursos políticos inevitavelmente se entrelaçam aos midiáticos e afetivos. Num primeiro momento, serão apresentadas pesquisas já realizadas. Três trabalhos sobre grupos populacionais indicam que a “falta de representatividade” é produzida por filtros partidários, violências simbólicas e expectativas de performance, exigindo uma sociologia atenta a recursos, trajetórias e alianças. Dois estudos sobre comunicação política e impactos eleitorais apontam o enquadramento pelo qual discursos religiosos e a pauta anticorrupção ressignificam problemas socioeconômicos complexos em dilemas morais simplificadores na luta por legitimidade, demandando atenção à construção discursiva e às transformações sociotécnicas. Em seguida, uma atividade prática estimula os estudantes a construírem um desenho de estudo. Utilizando dados fornecidos pelos organizadores, os participantes devem formular e justificar problemas de pesquisa, construindo hipóteses falseáveis e descrevendo métodos e técnicas que permitam produzir inferências causais, assumindo explicitamente as limitações do desenho. Além disso, será ressaltada a importância de conduzir a escrita com linguagem clara e direta, compartilhar bases de dados para replicação, evitar gráficos e tabelas poluídas, etc. Assim, a oficina capacita os discentes a construir trabalhos robustos e replicáveis, que permitam compreender os mecanismos de produção da desigualdade representativa, contribuindo assim para um diagnóstico mais preciso das tensões constitutivas da democracia brasileira.</p>
 
-      <article class="session-item">
-        <div class="session-visual gt-badge" aria-hidden="true">GT 3</div>
-        <div class="session-main">
-          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
-          <h4>GT 3 — Metamorfoses do Trabalho e da Educação na era digital</h4>
-          <p><strong>Coordenadores:</strong> Me. Victor Hugo Andrade Alves e Me. João Mário Pinto</p>
-          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
-          <span class="tag">Sem modalidade</span>
+        <div class="oficina-people">
+          <div class="oficina-person">
+            <strong>Coordenação</strong>
+            <span>Coordenadores: Doutorando Carlos Henrique Filgueiras Prata de Almeida (PPGS/UFS), Doutorando Leonardo Almeida de Jesus (PPGS/UFS), Doutoranda Izabel Cristina Custódio Santos (PPGS/UFS), Doutoranda Bárbara Vitória Oliveira Castro (PPGS/UFS), Mestranda Vanessa Silva da Anunciação</span>
+          </div>
+          <div class="oficina-person">
+            <strong>Formato</strong>
+            <span>Presencial, 2 dias</span>
+          </div>
         </div>
-        <a class="session-link" href="gt-3.html" aria-label="Ver detalhes do GT 3">Ver detalhes</a>
-      </article>
 
-      <article class="session-item">
-        <div class="session-visual gt-badge" aria-hidden="true">GT 4</div>
-        <div class="session-main">
-          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
-          <h4>GT 4 — Migrações Regionais e internacionais contemporâneas: diferentes abordagens teóricas e metodológicas e diferentes recortes empíricos e temáticos</h4>
-          <p><strong>Coordenação:</strong> Prof. Dr. Marcelo Alario Ennes (DCS/PPGS/GEPPIP/UFS)</p>
-          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
-          <span class="tag">Híbrido</span>
+        <div class="oficina-schedule">
+          <h2>Programação</h2>
+          <div class="oficina-schedule-row">
+            <strong>09/11</strong>
+            <span>11h30 - 13h</span>
+            <span>Presencial, sala 1</span>
+          </div>
+          <div class="oficina-schedule-row">
+            <strong>10/11</strong>
+            <span>11h30 - 13h</span>
+            <span>Presencial, sala 1</span>
+          </div>
         </div>
-        <a class="session-link" href="gt-4.html" aria-label="Ver detalhes do GT 4">Ver detalhes</a>
-      </article>
 
-      <article class="session-item">
-        <div class="session-visual gt-badge" aria-hidden="true">GT 5</div>
-        <div class="session-main">
-          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
-          <h4>GT 5 — Lepp</h4>
-          <p><strong>Coordenação:</strong> a inserir</p>
-          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
-          <span class="tag">Informações a inserir</span>
-        </div>
-        <a class="session-link" href="gt-5.html" aria-label="Ver detalhes do GT 5">Ver detalhes</a>
-      </article>
-
-      <article class="session-item">
-        <div class="session-visual gt-badge" aria-hidden="true">GT 6</div>
-        <div class="session-main">
-          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
-          <h4>GT 6 — Gerts</h4>
-          <p><strong>Coordenação:</strong> a inserir</p>
-          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
-          <span class="tag">Informações a inserir</span>
-        </div>
-        <a class="session-link" href="gt-6.html" aria-label="Ver detalhes do GT 6">Ver detalhes</a>
-      </article>
-
-      <article class="session-item">
-        <div class="session-visual gt-badge" aria-hidden="true">GT 7</div>
-        <div class="session-main">
-          <div class="when">09, 10 e 11/11 &middot; 9h &ndash; 11h</div>
-          <h4>GT 7 — Gepdem</h4>
-          <p><strong>Coordenação:</strong> a inserir</p>
-          <p class="gt-days"><strong>Sessões:</strong> 09/11, 10/11 e 11/11, das 9h às 11h</p>
-          <span class="tag">Informações a inserir</span>
-        </div>
-        <a class="session-link" href="gt-7.html" aria-label="Ver detalhes do GT 7">Ver detalhes</a>
-      </article>
+        <a class="back-link" href="oficinas.html">Voltar à lista de oficinas</a>
+      </div>
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
     <div class="footer-top">
@@ -1413,6 +1376,7 @@ footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font
   });
 </script>
 
+
 <script>
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
@@ -1421,5 +1385,6 @@ footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font
     navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
   }
 </script>
+
 </body>
 </html>

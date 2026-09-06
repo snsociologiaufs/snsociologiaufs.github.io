@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>VI Seminário Nacional de Sociologia — PPGS/UFS</title>
-<meta content="VI Seminário Nacional de Sociologia do PPGS/UFS. Os desafios da Sociologia e democracia em um mundo digital. Cronograma, programação e inscrições." name="description"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Guia turístico — VI Seminário Nacional de Sociologia — PPGS/UFS</title>
+<meta name="description" content="Guia turístico e informações úteis para participantes do VI Seminário Nacional de Sociologia do PPGS/UFS."/>
 <link href="images/logo-web1.png" rel="icon" type="image/png"/>
 <link href="images/logo-web1.png" rel="apple-touch-icon"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&amp;family=Barlow+Condensed:wght@500;600;700;800&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800;6..12,900&amp;display=swap" rel="stylesheet"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700;800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800;6..12,900&display=swap" rel="stylesheet"/>
 <style>
+
   /* ======================================================================
      PAINEL DE CONTROLE RÁPIDO — VARIÁVEIS GLOBAIS
      ----------------------------------------------------------------------
@@ -1621,521 +1621,539 @@ footer h4 {
   }
 
 
-/* ======================================================================
-   ATALHOS DA HOME
-   Navegação horizontal logo abaixo do topo, inspirada no Guia Turístico.
-   Substitui os antigos botões "Inscreva-se" e "Ver programação".
-   ====================================================================== */
-.home-quick-nav{
-  position:relative;
-  z-index:4;
-  width:100%;
-  background:var(--navy);
-}
 
-.home-quick-nav-inner{
-  width:100%;
-  max-width:1320px;
-  margin:0 auto;
-  padding:0 28px;
-  display:grid;
-  grid-template-columns:repeat(6,minmax(0,1fr));
-}
+/* ============================================================
+   GUIA TURÍSTICO
+   O menu e o rodapé usam exatamente o CSS padrão do index.
+   Abaixo ficam somente os estilos do conteúdo desta página.
+   ============================================================ */
 
-.home-quick-nav a{
-  min-height:72px;
-  padding:14px 12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+body.guide-page{ background:#fff; }
 
-  color:#fff;
-  text-decoration:none;
-  font-family:'Barlow Condensed',sans-serif;
+/* remove o pequeno traço decorativo dos subtítulos nesta página */
+.guide-page main .eyebrow::before{ display:none; }
+
+.guide-page main .eyebrow{
+  gap:0;
+  margin-bottom:12px;
+  color:var(--indigo);
   font-size:.76rem;
   font-weight:700;
-  letter-spacing:.065em;
-  text-transform:uppercase;
-
-  border-right:1px solid rgba(255,255,255,.13);
-  transition:background .16s ease, color .16s ease;
+  letter-spacing:.13em;
 }
 
-.home-quick-nav a:first-child{
-  border-left:1px solid rgba(255,255,255,.13);
-}
-
-.home-quick-nav a:hover,
-.home-quick-nav a:focus-visible{
-  background:rgba(255,255,255,.07);
-  color:#A5E5F0;
-  outline:none;
-}
-
-@media (max-width:900px){
-  .home-quick-nav-inner{
-    grid-template-columns:repeat(3,minmax(0,1fr));
-  }
-
-  .home-quick-nav a{
-    min-height:64px;
-    border-bottom:1px solid rgba(255,255,255,.11);
-  }
-
-  .home-quick-nav a:nth-child(3n+1){
-    border-left:1px solid rgba(255,255,255,.13);
-  }
-}
-
-@media (max-width:560px){
-  .home-quick-nav-inner{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    padding:0;
-  }
-
-  .home-quick-nav a{
-    min-height:59px;
-    padding:12px 8px;
-    font-size:.71rem;
-    letter-spacing:.055em;
-  }
-
-  .home-quick-nav a:nth-child(odd){
-    border-left:1px solid rgba(255,255,255,.13);
-  }
-}
-
-/* com a nova barra, o hero não precisa reservar o espaço que existia
-   para os antigos botões */
-.hero{
-  padding-bottom:66px;
-}
-
-
-/* ======================================================================
-   FAIXA-MENU DA HOME
-   Repete o menu principal e permite submenu em Programação.
-   ====================================================================== */
-.home-quick-nav{
+/* HERO */
+.guide-hero{
   position:relative;
-  z-index:80;
-  width:100%;
-  overflow:visible;
-  background:var(--navy);
+  padding:72px 0 64px;
+  background:#fff;
+  overflow:hidden;
 }
-
-.home-quick-nav-inner{
-  width:100%;
-  max-width:1320px;
-  margin:0 auto;
-  padding:0 28px;
-  display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  align-items:stretch;
-  overflow:visible;
-}
-
-.home-quick-nav .home-menu-link,
-.home-quick-nav .home-menu-item > summary{
-  min-height:72px;
-  padding:14px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:7px;
-  text-align:center;
-
-  color:#fff;
-  text-decoration:none;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:.76rem;
-  font-weight:700;
-  letter-spacing:.065em;
-  line-height:1.2;
-  text-transform:uppercase;
-
-  border-right:1px solid rgba(255,255,255,.13);
-  cursor:pointer;
-  list-style:none;
-  transition:background .16s ease,color .16s ease;
-}
-
-.home-quick-nav .home-menu-link:first-child{
-  border-left:1px solid rgba(255,255,255,.13);
-}
-
-.home-quick-nav .home-menu-item{
-  position:relative;
-  min-width:0;
-}
-
-.home-quick-nav .home-menu-item > summary{
-  width:100%;
-}
-
-.home-quick-nav .home-menu-item > summary::-webkit-details-marker{
-  display:none;
-}
-
-.home-quick-nav .home-menu-item > summary::marker{
+.guide-hero::after{
   content:"";
-}
-
-.home-quick-nav .home-menu-link:hover,
-.home-quick-nav .home-menu-link:focus-visible,
-.home-quick-nav .home-menu-item > summary:hover,
-.home-quick-nav .home-menu-item > summary:focus-visible,
-.home-quick-nav .home-menu-item[open] > summary{
-  background:rgba(255,255,255,.075);
-  color:#A5E5F0;
-  outline:none;
-}
-
-.home-menu-caret{
-  display:inline-block;
-  font-size:.7em;
-  transition:transform .16s ease;
-}
-
-.home-menu-item[open] .home-menu-caret{
-  transform:rotate(180deg);
-}
-
-.home-menu-dropdown{
   position:absolute;
-  top:100%;
-  left:50%;
-  width:240px;
-  transform:translateX(-50%) translateY(6px);
+  right:-130px;
+  bottom:-190px;
+  width:620px;
+  height:620px;
+  background:url('images/textura-rede-2.png') center/contain no-repeat;
+  opacity:.05;
+  pointer-events:none;
+}
+.guide-hero .wrap{ position:relative; z-index:1; max-width:1160px; }
+.guide-hero-grid{
+  display:grid;
+  grid-template-columns:1.25fr .75fr;
+  gap:64px;
+  align-items:center;
+}
+.guide-copy h1{
+  max-width:760px;
+  font-size:clamp(2.6rem,5vw,4.35rem);
+  font-weight:900;
+  letter-spacing:-.025em;
+}
+.guide-copy h1 span{ color:var(--cyan); }
+.guide-copy .lede{
+  max-width:720px;
+  margin:20px 0 0;
+  color:var(--text-soft);
+  font-size:1.06rem;
+  line-height:1.72;
+}
+.guide-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-top:28px;
+}
+.guide-meta span{
+  padding:8px 12px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  color:var(--navy);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.guide-mark{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:255px;
+  padding-left:0px;
+  border-left:none;
+}
+.guide-mark img{
+  display:block;
+  width:100%;
+  max-width:325px;
+  height:auto;
+}
 
-  padding:8px 0;
+/* atalhos internos */
+.guide-quick-nav{
+  background:var(--navy);
+}
+.guide-quick-nav .wrap{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  padding-top:0;
+  padding-bottom:0;
+}
+.guide-quick-nav a{
+  min-height:70px;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  text-decoration:none;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border-right:1px solid rgba(255,255,255,.12);
+}
+.guide-quick-nav a:first-child{
+  border-left:1px solid rgba(255,255,255,.12);
+}
+.guide-quick-nav a:hover{
+  background:rgba(255,255,255,.07);
+  color:#9DDFEC;
+}
+
+/* seções */
+.guide-page main section{ padding:74px 0; }
+.guide-page main section.guide-hero,
+.guide-page main section.final-note{ padding-top:72px; padding-bottom:64px; }
+
+.guide-orientation{ background:var(--bg); }
+.guide-section{ background:#fff; }
+.guide-section.alt{ background:var(--bg-alt); }
+
+.guide-page main h2{
+  font-size:clamp(1.9rem,3vw,2.5rem);
+}
+.section-head{
+  display:grid;
+  grid-template-columns:.72fr 1.28fr;
+  gap:48px;
+  align-items:end;
+  margin-bottom:32px;
+}
+.section-head p{
+  margin:0;
+  max-width:650px;
+  color:var(--text-soft);
+}
+
+.orientation-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:30px;
+}
+.orientation-card{
+  min-height:205px;
+  padding:28px 26px;
   background:#fff;
   border:1px solid var(--line);
-  box-shadow:0 16px 36px rgba(11,31,63,.18);
-
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
-  transition:opacity .16s ease,transform .16s ease,visibility .16s ease;
-  z-index:120;
 }
-
-.home-menu-item[open] .home-menu-dropdown,
-.home-menu-item:hover .home-menu-dropdown,
-.home-menu-item:focus-within .home-menu-dropdown{
-  opacity:1;
-  visibility:visible;
-  pointer-events:auto;
-  transform:translateX(-50%) translateY(0);
-}
-
-.home-menu-dropdown a{
+.card-num{
   display:block;
-  padding:11px 18px;
+  margin-bottom:20px;
+  color:var(--cyan);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.78rem;
+  font-weight:800;
+  letter-spacing:.09em;
+}
+.orientation-card h3{
+  margin-bottom:10px;
+  font-size:1.08rem;
+}
+.orientation-card p{
+  margin:0;
+  color:var(--text-soft);
+  font-size:.93rem;
+}
+.orientation-card a{
+  display:inline-block;
+  margin-top:14px;
   color:var(--navy);
+  font-weight:700;
   text-decoration:none;
-  font-family:'Barlow',sans-serif;
-  font-size:.84rem;
-  font-weight:500;
-  text-transform:none;
-  letter-spacing:0;
-  white-space:nowrap;
+  border-bottom:1px solid var(--cyan);
 }
 
-.home-menu-dropdown a:hover,
-.home-menu-dropdown a:focus-visible{
+/* hospedagem */
+.hotel-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+.hotel-card{
+  min-height:195px;
+  padding:21px 23px;
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.hotel-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+}
+.hotel-card h3{
+  font-size:1.06rem;
+  margin-bottom:0;
+}
+.distance{
+  flex:none;
+  padding:5px 8px;
   background:var(--bg);
   color:var(--indigo);
-  outline:none;
-}
-
-/* A inscrição continua integrada ao menu, sem virar um botão solto */
-.home-quick-nav .home-menu-cta{
-  color:#fff;
-}
-
-/* tablet: mantém a faixa em uma linha e permite rolagem horizontal,
-   preservando a aparência de menu contínuo */
-@media (max-width:900px){
-  .home-quick-nav{
-    overflow-x:auto;
-    overflow-y:visible;
-    -webkit-overflow-scrolling:touch;
-  }
-
-  .home-quick-nav-inner{
-    min-width:760px;
-    grid-template-columns:repeat(5,1fr);
-    padding:0 18px;
-  }
-
-  .home-quick-nav .home-menu-link,
-  .home-quick-nav .home-menu-item > summary{
-    min-height:64px;
-    padding:12px 14px;
-  }
-}
-
-/* celular: continua em uma linha para manter a linguagem da faixa */
-@media (max-width:560px){
-  .home-quick-nav-inner{
-    min-width:690px;
-    padding:0;
-  }
-
-  .home-quick-nav .home-menu-link,
-  .home-quick-nav .home-menu-item > summary{
-    min-height:58px;
-    padding:11px 12px;
-    font-size:.71rem;
-    letter-spacing:.05em;
-  }
-
-  .home-menu-dropdown{
-    width:220px;
-  }
-}
-
-
-/* ======================================================================
-   FAIXA DE NAVEGAÇÃO RÁPIDA
-   Menu direto, sem submenu e sem divisórias verticais.
-   ====================================================================== */
-.home-quick-nav{
-  position:relative;
-  z-index:80;
-  width:100%;
-  background:var(--navy);
-  overflow:visible;
-}
-
-.home-quick-nav-inner{
-  width:100%;
-  max-width:1320px;
-  margin:0 auto;
-  padding:0 28px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:clamp(12px,1.75vw,27px);
-}
-
-.home-quick-nav a{
-  position:relative;
-  min-height:68px;
-  padding:0 2px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  color:#fff;
-  text-decoration:none;
-  white-space:nowrap;
-
   font-family:'Barlow Condensed',sans-serif;
-  font-size:clamp(.69rem,.78vw,.78rem);
+  font-size:.68rem;
   font-weight:700;
-  line-height:1;
-  letter-spacing:.055em;
+  letter-spacing:.05em;
   text-transform:uppercase;
-
-  border:0 !important;
-  background:transparent;
-  transition:color .16s ease;
+}
+.hotel-card p{
+  margin:10px 0 0;
+  color:var(--text-soft);
+  font-size:.88rem;
+  line-height:1.5;
+}
+.hotel-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px 14px;
+  margin-top:auto;
+  padding-top:13px;
+}
+.text-link{
+  color:var(--navy);
+  text-decoration:none;
+  font-size:.82rem;
+  font-weight:700;
+  border-bottom:none;
+}
+.text-link:hover{
+  color:var(--indigo);
+  text-decoration:none;
 }
 
-.home-quick-nav a::after{
+/* transporte */
+.info-panel{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.info-main{ padding:34px 36px; }
+.info-side{
+  padding:34px 32px;
+  background:var(--navy);
+  color:#fff;
+}
+.info-main h3,.info-side h3{
+  margin-bottom:14px;
+  font-size:1.12rem;
+}
+.info-side h3{ color:#fff; }
+.info-side p{
+  color:#C7CDE0;
+  margin:0 0 13px;
+}
+.info-list{
+  list-style:none;
+  margin:16px 0 0;
+  padding:0;
+}
+.info-list li{
+  position:relative;
+  padding:11px 0 11px 18px;
+  color:var(--text-soft);
+  border-bottom:1px solid var(--line);
+}
+.info-list li:last-child{ border-bottom:0; }
+.info-list li::before{
   content:"";
   position:absolute;
-  left:50%;
-  bottom:17px;
-  width:0;
-  height:2px;
+  left:0;
+  top:1.26em;
+  width:6px;
+  height:6px;
   background:var(--cyan);
-  transform:translateX(-50%);
-  transition:width .18s ease;
 }
 
-.home-quick-nav a:hover,
-.home-quick-nav a:focus-visible{
-  color:#A9E7F1;
-  outline:none;
-  background:transparent;
-}
-
-.home-quick-nav a:hover::after,
-.home-quick-nav a:focus-visible::after{
-  width:24px;
-}
-
-/* Inscrição recebe apenas um contraste discreto, sem virar um botão pesado */
-.home-quick-nav .home-menu-cta{
-  color:var(--cyan);
-}
-
-.home-quick-nav .home-menu-cta:hover,
-.home-quick-nav .home-menu-cta:focus-visible{
-  color:#fff;
-}
-
-/* Tablet: mantém a faixa em uma linha com rolagem horizontal elegante */
-@media (max-width:980px){
-  .home-quick-nav{
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-  }
-
-  .home-quick-nav::-webkit-scrollbar{
-    display:none;
-  }
-
-  .home-quick-nav-inner{
-    width:max-content;
-    min-width:100%;
-    justify-content:flex-start;
-    gap:24px;
-    padding:0 24px;
-  }
-
-  .home-quick-nav a{
-    min-height:62px;
-    font-size:.72rem;
-  }
-
-  .home-quick-nav a::after{
-    bottom:14px;
-  }
-}
-
-@media (max-width:560px){
-  .home-quick-nav-inner{
-    gap:21px;
-    padding:0 18px;
-  }
-
-  .home-quick-nav a{
-    min-height:58px;
-    font-size:.69rem;
-    letter-spacing:.045em;
-  }
-
-  .home-quick-nav a::after{
-    bottom:12px;
-  }
-}
-
-
-/* AJUSTE FINAL DA FAIXA: largura alinhada ao conteúdo da página */
-.home-quick-nav-inner{
-  width:100%;
-  max-width:1140px;
-  margin:0 auto;
-  padding:0 28px;
-
+/* alimentação */
+.food-grid{
   display:grid;
-  grid-template-columns:repeat(8,minmax(0,1fr));
-  align-items:stretch;
-  gap:0;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
 }
-
-.home-quick-nav a{
-  min-height:72px;
-  padding:0 10px;
-  width:100%;
-
+.food-card{
+  padding:30px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.food-card h3{
+  margin-bottom:5px;
+  font-size:1.12rem;
+}
+.food-card .where{
+  display:block;
+  margin-bottom:16px;
+  color:var(--indigo);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.place-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.place-list li{
   display:flex;
+  justify-content:space-between;
+  gap:18px;
+  padding:13px 0;
+  color:var(--text-soft);
+  border-bottom:1px solid var(--line);
+}
+.place-list li:last-child{ border-bottom:0; }
+.place-list strong{ color:var(--navy); }
+.handle{
+  white-space:nowrap;
+  color:var(--indigo);
+  font-size:.84rem;
+}
+
+/* pontos turísticos */
+.sights-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+.sight{
+  min-height:155px;
+  padding:27px 28px;
+  background:#fff;
+  border:1px solid var(--line);
+}
+.sight .tag{
+  display:block;
+  margin-bottom:10px;
+  color:var(--cyan);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.sight h3{
+  margin-bottom:8px;
+  font-size:1.07rem;
+}
+.sight p{
+  margin:0;
+  color:var(--text-soft);
+  font-size:.9rem;
+}
+
+/* fechamento */
+.final-note{
+  background:var(--navy)!important;
+}
+.final-note-box{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:38px;
   align-items:center;
-  justify-content:center;
-  text-align:center;
-
-  font-size:.76rem;
-  letter-spacing:.05em;
+}
+.final-note h2{
+  color:#fff!important;
+  font-size:1.55rem!important;
+}
+.final-note p{
+  max-width:720px;
+  margin:8px 0 0;
+  color:#C7CDE0!important;
+}
+.final-note .btn{
+  margin-left:0;
+  background:var(--cyan);
+  border-color:var(--cyan);
+  color:var(--navy);
+}
+.final-note .btn:hover{
+  background:#fff;
+  border-color:#fff;
 }
 
-.home-quick-nav a::after{
-  bottom:17px;
+@media(max-width:900px){
+  .guide-hero-grid{ grid-template-columns:1fr; gap:32px; }
+  .guide-mark{
+    min-height:auto;
+    padding:32px 0 0;
+    border-left:0;
+    border-top:1px solid var(--line);
+  }
+  .guide-mark img{ max-width:270px; }
+  .guide-quick-nav .wrap{ grid-template-columns:repeat(3,1fr); }
+  .orientation-grid{ grid-template-columns:1fr; }
+  .section-head{ grid-template-columns:1fr; gap:12px; }
+  .info-panel{ grid-template-columns:1fr; }
+  .hotel-grid,.food-grid{ grid-template-columns:1fr; }
+}
+@media(max-width:680px){
+  .guide-hero{ padding:52px 0 46px!important; }
+  .guide-copy h1{ font-size:2.4rem; }
+  .guide-copy .lede{ font-size:1rem; }
+  .guide-meta{ display:grid; grid-template-columns:1fr; }
+  .guide-quick-nav .wrap{
+    grid-template-columns:1fr 1fr;
+    padding-left:0;
+    padding-right:0;
+  }
+  .guide-quick-nav a{
+    min-height:60px;
+    padding:11px 8px;
+  }
+  .guide-page main section{ padding:54px 0; }
+  .orientation-card,.food-card,.sight{
+    padding:23px 21px;
+  }
+
+  .hotel-card{
+    min-height:auto;
+    padding:19px 18px;
+  }
+  .sights-grid{ grid-template-columns:1fr; }
+  .info-main,.info-side{ padding:25px 21px; }
+  .place-list li{ display:block; }
+  .handle{ display:block; margin-top:2px; }
+  .final-note-box{ grid-template-columns:1fr; }
 }
 
-@media (max-width:980px){
-  .home-quick-nav{
-    overflow-x:auto;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
+
+/* Rolagem mais suave entre seções */
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:84px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+}
+
+
+/* AJUSTE FINAL — hospedagem mais compacta */
+.hotel-grid{
+  gap:12px;
+}
+
+.hotel-card{
+  min-height:172px;
+  padding:17px 19px;
+}
+
+.hotel-top{
+  gap:10px;
+}
+
+.hotel-card h3{
+  font-size:1.01rem;
+}
+
+.distance{
+  padding:4px 7px;
+  font-size:.65rem;
+}
+
+.hotel-card p{
+  margin:7px 0 0;
+  font-size:.85rem;
+  line-height:1.42;
+}
+
+.hotel-links{
+  gap:6px 12px;
+  padding-top:10px;
+}
+
+.text-link{
+  font-size:.80rem;
+}
+
+/* Remove sublinhados e traços de todos os textos clicáveis do conteúdo */
+.guide-page main a:not(.btn){
+  text-decoration:none !important;
+  border-bottom:none !important;
+}
+
+.guide-page main a:not(.btn):hover,
+.guide-page main a:not(.btn):focus-visible{
+  text-decoration:none !important;
+  border-bottom:none !important;
+}
+
+/* Mantém identificação visual no hover apenas pela cor */
+.orientation-card a:hover,
+.text-link:hover{
+  color:var(--indigo);
+}
+
+@media(max-width:680px){
+  .hotel-card{
+    min-height:auto;
+    padding:16px 16px;
   }
 
-  .home-quick-nav::-webkit-scrollbar{
-    display:none;
+  .hotel-card p{
+    font-size:.84rem;
   }
 
-  .home-quick-nav-inner{
-    width:max-content;
-    min-width:900px;
-    max-width:none;
-    padding:0 22px;
-    grid-template-columns:repeat(8,110px);
-  }
-
-  .home-quick-nav a{
-    min-height:64px;
-    padding:0 8px;
-    font-size:.72rem;
+  .hotel-links{
+    padding-top:9px;
   }
 }
 
-@media (max-width:560px){
-  .home-quick-nav-inner{
-    min-width:840px;
-    padding:0 18px;
-    grid-template-columns:repeat(8,102px);
-  }
-
-  .home-quick-nav a{
-    min-height:58px;
-    font-size:.69rem;
-  }
-}
-
-</style>
-<style id="site-standardization">
-/* Menu e rodapé padronizados */
-header.site-nav{position:sticky;top:0;z-index:100;background:rgba(245,246,249,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
-.nav-inner{max-width:1140px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
-.brand{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
-.brand-logo{height:38px;width:auto;display:block;}
-nav.links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
-nav.links>a,.nav-item>summary{color:var(--navy);text-decoration:none;font-size:.85rem;font-weight:500;white-space:nowrap;cursor:pointer;list-style:none;}
-.nav-item>summary::-webkit-details-marker{display:none}.nav-item>summary::marker{content:"";}
-nav.links>a{position:relative;padding:4px 0;}
-nav.links>a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--cyan);transition:width .2s ease;}
-nav.links>a:hover::after{width:100%;}
-.nav-cta{background:var(--navy);color:#fff!important;padding:9px 18px!important;border-radius:var(--radius);font-size:.78rem!important;font-weight:600!important;text-transform:uppercase;letter-spacing:.05em;}
-.nav-cta::after{display:none!important;}
-.burger{display:none;background:none;border:1.5px solid var(--navy);border-radius:4px;width:38px;height:34px;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;}
-.burger span{width:18px;height:2px;background:var(--navy);display:block;}
-.nav-item{position:relative;display:block;}
-.nav-item .caret{display:inline-block;font-size:.62em;margin-left:3px;transform:translateY(-1px);transition:transform .16s ease;}
-.nav-item[open] .caret{transform:translateY(-1px) rotate(180deg);}
-.dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(4px);min-width:220px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 16px 36px rgba(11,31,63,.16);padding:8px 0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .16s ease,transform .16s ease,visibility .16s ease;z-index:80;}
-.nav-item[open] .dropdown,.nav-item:hover .dropdown,.nav-item:focus-within .dropdown{display:block;opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto;}
-nav.links .dropdown a{display:block;padding:9px 18px;font-size:.82rem;color:var(--text);font-weight:500;white-space:nowrap;text-decoration:none;}
-nav.links .dropdown a::after{display:none;}nav.links .dropdown a:hover{background:var(--bg);color:var(--indigo);}
-footer{background:#050B18;color:#DCE1F0;padding:56px 0 26px;position:relative;}
-.footer-top{display:grid;grid-template-columns:1.4fr .8fr .8fr;align-items:start;gap:48px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.14);}
-.footer-top>*{min-width:0}.footer-brand{display:flex;align-items:center;gap:14px;margin-bottom:12px}.footer-brand img{height:46px;width:auto;display:block}.footer-label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--cyan)}
-.footer-description{max-width:42ch;color:#9AA4C4;font-size:.9rem;margin:.4rem 0 1.4rem}.footer-contact{display:flex;flex-direction:column;gap:2px;margin-bottom:14px}.footer-contact span{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#C3CAE0}.footer-contact a{color:#fff;font-size:.9rem;text-decoration:none;overflow-wrap:anywhere}
-footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font-weight:700;margin:0 0 16px}.footer-link-list{list-style:none;padding:0;margin:0}.footer-link-list li{margin:8px 0}.footer-link-list a{color:#C3CAE0;text-decoration:none;font-size:.88rem}.footer-link-list a:hover{color:#fff}.footer-location p{color:#C3CAE0;font-size:.88rem;line-height:1.6;margin:0 0 16px}.footer-location .btn{margin-left:0}
-.social-row{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin-top:14px}.social-link{display:flex;align-items:center;gap:9px;width:auto;height:auto;color:#C3CAE0;text-decoration:none;font-size:.84rem}.social-link svg{width:18px;height:18px;fill:#fff;flex-shrink:0}.social-link:hover{color:#fff}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:20px;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;color:#77809E}.foot-bottom a{color:#9AA4C4;text-decoration:none;border-bottom:1px solid transparent;transition:color .15s ease,border-color .15s ease}.foot-bottom a:hover{color:#fff;border-bottom-color:#fff}
-@media(max-width:900px){nav.links{position:fixed;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 28px;border-bottom:1px solid var(--line);display:none;gap:16px;align-items:flex-start;max-height:calc(100vh - 64px);overflow-y:auto}nav.links.open{display:flex}.burger{display:flex}.nav-item{width:100%;display:block}.nav-item>summary{width:100%;padding:0}.nav-item:not([open]) .dropdown{display:none}.nav-item[open] .dropdown{position:static;display:flex;opacity:1;visibility:visible;pointer-events:auto;transform:none;box-shadow:none;border:none;border-left:2px solid var(--line);padding:4px 0 4px 16px;margin:10px 0 0;flex-direction:column;gap:10px;width:100%;background:transparent}nav.links .dropdown a{padding:0;color:var(--text-soft)}.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:760px){.footer-top{grid-template-columns:1fr;gap:36px}.foot-bottom{flex-direction:column;align-items:flex-start}}
-@media(max-width:460px){.nav-inner{padding-left:18px;padding-right:18px}.brand-logo{height:34px}}
 </style>
 </head>
-<body>
+<body class="guide-page">
 <header class="site-nav">
   <div class="nav-inner">
     <a href="index.html#inicio" class="brand">
@@ -2161,433 +2179,288 @@ footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font
     </nav>
   </div>
 </header>
-<!-- =====================================================================
-     AVISO IMPORTANTE
-     ---------------------------------------------------------------------
-     Para MOSTRAR: no :root, use --aviso-display:block;
-     Para ESCONDER: no :root, use --aviso-display:none;
-
-     Edite abaixo o nome da atividade, a data/horário e o link, se necessário.
-     ===================================================================== -->
-<div aria-live="polite" class="site-alert" role="status">
-<div class="wrap">
-<div class="site-alert-content">
-<span class="site-alert-label">Aviso</span>
-<p><strong>Submissão de resumo em breve.</strong></p>
-</div>
-</div>
-</div>
-<section class="hero textura-fundo textura--bl" id="inicio">
-<div class="wrap reveal">
-<div class="hero-grid">
-<div class="hero-map">
-<img alt="Mapa do Brasil em rede — identidade visual do VI SNS" loading="eager" src="images/mapa-vi-sns.png"/>
-</div>
-<div class="hero-title">
-<div class="hero-logo-wrap">
-<img alt="VI Seminário Nacional de Sociologia — PPGS · UFS" class="hero-logo" src="images/logo-sns.png"/>
-</div>
-<p class="theme">Os desafios da Sociologia e democracia em um mundo digital</p>
-</div>
-<div class="hero-info">
-<div class="hero-info-item">
-<span>Data</span>
-<strong>09 a 11 de novembro de 2026</strong>
-</div>
-<div class="hero-info-item">
-<span>Local</span>
-<strong>Cidade Univ. Prof. José Aluísio de Campos — UFS, São Cristóvão/SE</strong>
-</div>
-<div class="hero-info-item">
-<span>Realização</span>
-<strong>PPGS / UFS</strong>
-</div>
-</div>
-</div>
-</div>
+<main>
+<section class="guide-hero">
+  <div class="wrap">
+    <div class="guide-hero-grid">
+      <div class="guide-copy">
+        <h1>Guia <span>turístico</span></h1>
+        <p class="lede">
+          Vai participar do VI Seminário Nacional de Sociologia? Reunimos aqui informações
+          para facilitar sua chegada à UFS, sua estadia em Aracaju e seus deslocamentos durante o evento,
+          além de algumas sugestões para conhecer a cidade.
+        </p>
+        <div class="guide-meta">
+          <span class="meta-pill">09 a 11 de novembro de 2026</span>
+          <span class="meta-pill">Campus São Cristóvão, UFS</span>
+          <span class="meta-pill">Aracaju e São Cristóvão · Sergipe</span>
+        </div>
+      </div>
+      <div class="guide-mark">
+        <img src="images/logo-sns.png" alt="Identidade visual do VI SNS"/>
+      </div>
+    </div>
+  </div>
 </section>
 
-<nav class="home-quick-nav" aria-label="Menu rápido">
-  <div class="home-quick-nav-inner">
-    <a href="index.html#cronograma">Cronograma</a>
-    <a href="programacao.html">Programação geral</a>
-    <a href="conferencias.html">Conferências</a>
-    <a href="gts.html">Grupos de Trabalho</a>
-    <a href="mesas.html">Mesas</a>
-    <a href="oficinas.html">Oficinas</a>
-    <a href="submissao.html">Submissão</a>
-    <a class="home-menu-cta"
-       href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao"
-       target="_blank"
-       rel="noopener noreferrer">Inscrição</a>
+<nav class="guide-quick-nav" aria-label="Atalhos do guia">
+  <div class="wrap">
+    <a href="#orientacao">Antes de chegar</a>
+    <a href="#hospedagem">Onde ficar</a>
+    <a href="#transporte">Como circular</a>
+    <a href="#alimentacao">Onde comer</a>
+    <a href="#conhecer">O que conhecer</a>
   </div>
 </nav>
-<!-- =========================================================================
-     SEÇÃO: SOBRE O SEMINÁRIO
-     - Fundo branco + textura de rede bem sutil no canto superior direito
-       (classe .textura-fundo .textura--tr).
-     - Texto corrido dividido em duas colunas equilibradas (.two-col); a
-       frase-tema ganha destaque direto no texto (.tema-inline).
-     - Para trocar o canto onde a textura aparece, troque a classe
-       .textura--tr por .textura--tl / .textura--bl / .textura--br.
-========================================================================= -->
-<section class="textura-fundo textura--tr" id="apresentacao">
-<div class="wrap reveal">
-<h2>Sobre o Seminário</h2>
-<!-- Composição em coluna única. O tema funciona como uma pausa editorial
-         entre a apresentação histórica e o foco conceitual da edição de 2026. -->
-<div aria-hidden="true" class="about-meta">
-<span>VI Seminário Nacional de Sociologia</span>
-<span class="sep">·</span>
-<span>PPGS/UFS</span>
-<span class="sep">·</span>
-<span>09–11 nov. 2026</span>
-</div>
-<div class="about-flow">
-<p>O Seminário Nacional de Sociologia do PPGS-UFS chega à sua sexta edição, com o título <span class="tema-inline">“Os desafios da Sociologia e democracia em um mundo digital”</span>, consolidando mais de uma década de contribuições para as pesquisas na área. Com sua primeira edição em abril de 2016 e a manutenção bienal ao longo da última década, o evento reúne pesquisadores de todo o país, o que o posiciona como um dos principais eventos das Ciências Sociais realizados na região Nordeste.</p>
-<p>O evento é organizado pelo Programa de Pós-Graduação em Sociologia da Universidade Federal de Sergipe (PPGS-UFS), criado em 1987 e que, em 2026, completa 39 anos de atuação na formação de professores e pesquisadores em Sociologia. Além disso, as suas linhas de pesquisa têm integrado importantes redes, qualificando a produção científica no país.</p>
-<div aria-label="Tema do VI Seminário Nacional de Sociologia" class="about-theme-band">
-<span class="label">Tema desta edição</span>
-<blockquote>“Os desafios da Sociologia e democracia em um mundo digital”</blockquote>
-<span class="edition">VI SNS · 2026</span>
-</div>
-<p>Nessa edição, o desafio é pensar os principais temas da Sociologia em um mundo cada vez mais transpassado pelo digital, pelas novas tecnologias e por uma nova sociabilidade em redes. Ao mesmo tempo, o evento propõe um esforço de reflexão sobre a experiência da democracia a partir das diferentes linhas e grupos de pesquisa presentes no PPGS.</p>
-<p>A escolha desse tema vem da constatação do interesse de mestrandos e doutorandos por pesquisas que, em algum sentido, problematizam essas transformações. Uma realidade que perpassa a própria trajetória do evento, inicialmente presencial e que, ao longo dos anos, incorporou a participação remota como parte imprescindível de sua dinâmica.</p>
-<p class="chamada">Por essas razões, convidamos estudantes, pesquisadores, professores e demais interessados a participar das atividades do VI Seminário Nacional de Sociologia do PPGS-UFS, que será realizado nos dias 9, 10 e 11 de novembro de 2026.</p>
-</div>
-</div>
+
+<section class="guide-orientation" id="orientacao">
+  <div class="wrap">
+    <div class="eyebrow">Para se orientar</div>
+    <h2 style="font-size:clamp(1.9rem,3vw,2.55rem);">O essencial antes de chegar</h2>
+    <div class="orientation-grid">
+      <article class="orientation-card">
+        <span class="card-num">01 · Evento</span>
+        <h3>Campus São Cristóvão, UFS</h3>
+        <p>O seminário será realizado no Campus São Cristóvão da Universidade Federal de Sergipe, na Av. Marechal Rondon, s/n, Rosa Elze.</p>
+        <a href="https://www.google.com/maps/search/?api=1&query=Universidade%20Federal%20de%20Sergipe%20Campus%20S%C3%A3o%20Crist%C3%B3v%C3%A3o%20Avenida%20Marechal%20Rondon" target="_blank" rel="noopener">Localizar no mapa</a>
+      </article>
+      <article class="orientation-card">
+        <span class="card-num">02 · Hospedagem</span>
+        <h3>Aracaju é a base mais prática</h3>
+        <p>Há hotéis, pousadas e locações por temporada. A região da Orla da Atalaia concentra hospedagem, alimentação e opções de lazer.</p>
+        <a href="#hospedagem">Ver opções indicadas</a>
+      </article>
+      <article class="orientation-card">
+        <span class="card-num">03 · Deslocamentos</span>
+        <h3>Reserve tempo para os trajetos</h3>
+        <p>Os deslocamentos entre a UFS, o centro, a Orla de Atalaia, o aeroporto e a rodoviária podem ser demorados. Planeje a saída com antecedência.</p>
+        <a href="#transporte">Consultar transporte</a>
+      </article>
+    </div>
+  </div>
 </section>
-<!-- Textura no canto inferior esquerdo desta seção (troque a classe
-     .textura--bl para mudar de canto/imagem — ver comentário no CSS) -->
-<section class="alt textura-fundo textura--bl" id="cronograma">
-<div class="wrap reveal">
-<h2>Cronograma</h2>
-<div aria-label="Cronograma do evento" class="crono-table-wrap" role="region" tabindex="0">
-<table class="crono-table">
-<thead><tr><th>Data</th><th>Atividade</th></tr></thead>
-<tbody>
-<tr><td class="date">07/08 a 02/09</td><td>Submissão de propostas de Mesas Redondas, Minicursos, GTs e Oficinas</td></tr>
-<tr><td class="date">08/09</td><td>Divulgação das propostas aprovadas</td></tr>
-<tr><td class="date">08/09 a 21/09</td><td>Submissão de resumos</td></tr>
-<tr><td class="date">28/09</td><td>Resultado dos resumos aprovados</td></tr>
-<tr><td class="date">31/10</td><td>Envio dos papers completos</td></tr>
-<tr class="highlight"><td class="date">09 a 11/11</td><td>VI Seminário Nacional de Sociologia</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section class="textura-fundo textura--tl" id="programacao">
-<div class="wrap reveal">
-<h2>Programação</h2>
-<div class="prog-table-wrap">
-<table class="prog-table">
-<thead><tr><th>Horário</th><th>09/11</th><th>10/11</th><th>11/11</th></tr></thead>
-<tbody><tr><td>8h – 9h</td><td>Credenciamento</td><td>Credenciamento</td><td>Credenciamento</td></tr><tr><td>9h – 11h</td><td>GTs</td><td>GTs</td><td>GTs</td></tr><tr><td>11h30 – 13h</td><td>Oficinas</td><td>Oficinas</td><td>Oficinas</td></tr><tr><td>14h30 – 16h</td><td>Mesas-redondas</td><td>Mesas-redondas</td><td>Mesas-redondas</td></tr><tr><td>16h – 16h30</td><td>Coffee-break</td><td>Coffee-break</td><td>Coffee-break</td></tr><tr><td>16h30 – 18h</td><td>Mesas-redondas</td><td>Mesas-redondas</td><td>Mesas-redondas</td></tr><tr><td>19h30 – 21h30</td><td>Conferência de Abertura</td><td>Conferência de Meio</td><td>Conferência de Encerramento</td></tr></tbody>
-</table>
-</div>
-<div class="format-grid">
-<a class="format-card" href="conferencias.html"><span class="cond">Conferências</span><h4>3 Conferências</h4><p>Conferência de Abertura, de Meio e de Encerramento.</p></a>
-<a class="format-card" href="gts.html"><span class="cond">GTs</span><h4>7 Grupos de Trabalho</h4><p>Apresentação de pesquisas e discussões.</p></a>
-<a class="format-card" href="mesas.html"><span class="cond">Mesas</span><h4>7 Mesas-redondas</h4><p>Discussões e circulação de conhecimentos.</p></a>
-<a class="format-card" href="oficinas.html"><span class="cond">Oficinas</span><h4>9 Oficinas práticas</h4><p>Atividades práticas e participativas de aprendizagem.</p></a>
-</div>
-</div>
-</section>
-<!-- ==========================================================================
-     SEÇÃO: SUBMISSÃO DE RESUMO
-     --------------------------------------------------------------------------
-     Ordem do conteúdo:
-       1) .subm-facts   — tarja com prazo, e-mail, formato e nº de autores
-                          (dividida em 2 colunas, alinhadas com .subm-layout)
-       2) .subm-layout  — "Regras para Envio" (esq.) + "O que o PDF deve
-                           conter" (dir., lista numerada)
-       3) .subm-paper   — "Regras de formatação do Paper" (capa + tabela)
-                           com o único botão de download do modelo (.subm-dl),
-                           no cabeçalho do bloco
-     Para atualizar datas, e-mail ou o link do modelo, edite diretamente o
-     texto/atributo dentro do bloco correspondente — cada trecho está comentado.
-     ========================================================================== -->
-<!-- ==========================================================================
-     SEÇÃO: SUBMISSÃO DE RESUMO (RESUMO NA HOME)
-     --------------------------------------------------------------------------
-     Aqui, na página inicial, ficam só as informações essenciais — prazo,
-     e-mail, formato e nº de autores — mais 3 avisos rápidos e um botão para
-     a página completa (submissao.html), que traz todas as regras de envio
-     e de formatação do paper. Para editar as regras completas, mexa em
-     submissao.html — este bloco aqui deve continuar resumido de propósito.
-     ========================================================================== -->
-<section class="alt textura-fundo textura--br" id="submissoes">
-<div class="wrap reveal">
-<h2>Submissão de Resumo</h2>
-<p class="lede" style="max-width:62ch; color:var(--text-soft);">Confira as informações essenciais para enviar seu resumo. As regras completas de envio e de formatação do paper estão na página dedicada.</p>
-<!-- DADOS RÁPIDOS — altere aqui datas, e-mail, formato e nº de autores. -->
-<div class="subm-facts">
-<div class="subm-facts-col">
-<div class="subm-fact">
-<span>Período de submissão</span>
-<strong>08/09 a 21/09 de 2026</strong>
-</div>
-<div class="subm-fact">
-<span>Envio por e-mail</span>
-<strong><a href="mailto:visnsufs@gmail.com">visnsufs@gmail.com</a></strong>
-</div>
-</div>
-<div class="subm-facts-col">
-<div class="subm-fact">
-<span>Formato do arquivo</span>
-<strong>PDF</strong>
-</div>
-<div class="subm-fact">
-<span>Autores por trabalho</span>
-<strong>1 principal + até 2 coautores</strong>
-</div>
-</div>
-</div>
-<!-- 3 avisos rápidos + acesso às regras completas -->
-<div class="subm-summary-panel">
-<div class="subm-summary-notes">
-<ul class="subm-rules">
-<li>Indicar o <strong>título do GT</strong> ao qual o resumo será submetido.</li>
-<li>É <strong>vedada a submissão</strong> de um mesmo trabalho para mais de um GT.</li>
-<li>Após a aprovação, os autores têm até <strong>31/10</strong> para enviar o Paper completo.</li>
-</ul>
-</div>
-<div class="subm-summary-cta">
-<a class="btn btn-navy" href="submissao.html">Ver informações completas de submissão</a>
-</div>
-</div>
-</div>
-</section>
-<section class="textura-fundo" id="resumos-aprovados">
-<div class="wrap reveal">
-<div class="resultados-inner">
-<div class="resultados-copy">
-<h2>Resumos Aprovados</h2>
-<p class="lede">Confira os resumos aprovados por GT para apresentação no VI Seminário Nacional de Sociologia.</p>
-</div>
-<div class="resultados-action">
-<a aria-label="Acessar Resumos Aprovados" class="btn btn-navy" href="gts.html">Acessar Resumos Aprovados</a>
-</div>
-</div>
-</div>
-</section>
-<section id="inscricao">
-<div class="wrap reveal">
-<h2>Inscrição</h2>
-<div class="insc-box">
-<div>
-<h3>Garanta sua vaga no VI SNS</h3>
-<p>
-  As inscrições para o VI Seminário Nacional de Sociologia estarão abertas até o dia <strong style="font-size:1.15em; color:var(--cyan);">06 de novembro de 2026</strong> e deverão ser realizadas exclusivamente pelo Portal de Eventos da UFS (SIGAA).
-</p>
-<p>
-  Para participar, <strong>é necessário realizar a inscrição na atividade geral do evento</strong>. Quem desejar também poderá se inscrever nas oficinas e mesas-redondas disponíveis, de acordo com a programação do seminário.
-</p>
-<p>
-  Não fique de fora! Participe dos três dias de encontros, debates e experiências que conectam diferentes olhares sobre os desafios da Sociologia e da democracia em um mundo cada vez mais digital.
-</p>
-<p>
-  O credenciamento presencial terá início no dia <strong>09 de novembro de 2026</strong>, a partir das <strong>8h</strong>, na Didática VII, na UFS.
-</p>
-<p>
-<strong>Inscreva-se e participe do VI SNS!</strong>
-</p>
-</div>
-<div class="insc-cta">
-<a class="btn btn-primary" href="https://www.sigaa.ufs.br/sigaa/public/portal_cursos_eventos/login.jsf?aba=p-extensao" rel="noopener" target="_blank">Inscrever-se no SIGAA</a>
-<a class="btn btn-guide" href="guia-turistico.html">Guia turístico</a>
-</div>
-</div>
-</div>
-</section>
-<section class="dark textura-fundo textura--full" id="comissao">
-<div class="wrap reveal">
-<h2>Comissão Organizadora</h2>
-<p class="lede" style="max-width:65ch;">
-      Conheça a equipe responsável pela organização e realização do VI Seminário Nacional de Sociologia.
-    </p>
-<!-- Presidência em destaque -->
-<div class="leadership-grid">
-<div class="leadership-card">
-<span class="role">Presidente</span>
-<span class="name">Prof. Dr. Marco Aurélio Dias de Souza</span>
-</div>
-<div class="leadership-card">
-<span class="role">Vice-Presidente</span>
-<span class="name">Prof. Dr. Eder Claudio Malta Souza</span>
-</div>
-</div>
-<!-- Comissões -->
-<div class="commissions-grid">
-<div class="commission-card">
-<h3>Comissão Geral e de Monitoria</h3>
-<ul class="commission-list">
-<li>Amanda Beatriz Martins Silva</li>
-<li>Brenda de Souza Seixas</li>
-</ul>
-</div>
-<div class="commission-card">
-<h3>Comissão Cultural</h3>
-<ul class="commission-list">
-<li>Felícia Clark Nunes Teles</li>
-<li>Luciana Barreto Dinelli</li>
-<li>Tiago Damasceno Pereira</li>
-</ul>
-</div>
-<div class="commission-card">
-<h3>Comissão de Divulgação</h3>
-<ul class="commission-list">
-<li>Andrea Santos Lima</li>
-<li>Delorrana Lima Machado</li>
-<li>Olavo Matheus Costa dos Passos</li>
-</ul>
-</div>
-<div class="commission-card">
-<h3>Comissão de Logística</h3>
-<ul class="commission-list">
-<li>Aline Rangel Goothuzem Albuquerque</li>
-<li>Ana Flávia Pires Leal</li>
-<li>Maria Clara Souza Santos</li>
-</ul>
-</div>
-</div>
-<!-- Listas longas -->
-<div class="long-lists">
-<div class="list-box">
-<h3>Monitores</h3>
-<div class="monitores-aviso">
-<strong>EM BREVE!</strong>
-<p class="monitores-periodo">
-      Período para inscrição: de 01/10/2026 a 01/10/2026
-    </p>
-<p>
-      O Programa de Pós-Graduação em Sociologia (PPGS-UFS) convida estudantes
-      de graduação e pós-graduação a participarem como monitores voluntários
-      do VI SNS.
-    </p>
-<p>
-      A participação é uma forma de vivenciar o evento por dentro e de habitar
-      ativamente espaços de diálogo. Ao trocar experiências e fortalecer
-      conexões com pesquisadores e estudantes de diferentes áreas, findamos
-      por tecer a malha que fará nossa sociologia proliferante emergir.
-    </p>
-</div>
-<!--
-  ============================================================
-  LISTA DE MONITORES
-  Quando os monitores forem definidos, apague o aviso acima
-  e retire este conteúdo do comentário.
-  ============================================================
 
-  <ul class="name-list">
-    <li>Nome do monitor</li>
-    <li>Nome do monitor</li>
-    <li>Nome do monitor</li>
-    <li>Nome do monitor</li>
-  </ul>
+<section class="guide-section alt" id="hospedagem">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Hospedagem</div>
+        <h2>Onde ficar</h2>
+      </div>
+      <p>
+        O material da organização reúne opções em Aracaju com diferentes perfis e distâncias aproximadas
+        do local do evento. A Orla de Atalaia também oferece fácil acesso a bares, restaurantes, cafés e lazer.
+      </p>
+    </div>
 
-  -->
-</div>
-<div class="list-box">
-<h3>Comitê Científico</h3>
-<div class="comite-aviso">
-<strong>A DEFINIR</strong>
-</div>
-<!--
-  ============================================================
-  LISTA DO COMITÊ CIENTÍFICO
-  Quando os integrantes forem definidos, apague o aviso acima
-  e retire este conteúdo do comentário.
-  ============================================================
-
-  <ul class="name-list">
-    <li>Prof. Dr. Nome do integrante</li>
-    <li>Profa. Dra. Nome do integrante</li>
-    <li>Prof. Dr. Nome do integrante</li>
-    <li>Profa. Dra. Nome do integrante</li>
-  </ul>
-
-  -->
-</div>
-</div>
-</div>
-</section>
-<section class="alt textura-fundo textura--tr" id="apoio">
-<div class="wrap reveal">
-<h2>Realização &amp; Apoio</h2>
-<!--
-      ================================================================
-      LOGOS — COMO USAR
-      ================================================================
-      Coloque os arquivos dos logos dentro da pasta "images".
-
-      Exemplo:
-      images/logo-ppgs.png
-      images/logo-ufs.png
-      images/logo-capes.png
-
-      Depois, basta trocar o nome do arquivo no atributo src="".
-      Você pode adicionar ou remover cartões conforme necessário.
-
-      Se o logo tiver fundo transparente (PNG), melhor ainda.
-      ================================================================
-    -->
-<div class="apoio-titulo">Realização</div>
-<div class="realizacao-grid">
-<!-- PPGS / UFS -->
-<a aria-label="Acessar o site do Programa de Pós-Graduação em Sociologia da UFS" class="logo-card logo-maior" href="https://www.sigaa.ufs.br/sigaa/public/programa/portal.jsf?id=139" rel="noopener" target="_blank">
-<img alt="PPGS — UFS" src="images/ppgs.jpeg"/>
-</a>
-<!-- Universidade Federal de Sergipe -->
-<a aria-label="Acessar o site da Universidade Federal de Sergipe" class="logo-card logo-maior" href="https://www.ufs.br" rel="noopener" target="_blank">
-<img alt="Universidade Federal de Sergipe" src="images/ufs.png"/>
-</a>
-</div>
-<div class="apoio-titulo" style="margin-top:40px;">Apoio</div>
-<div class="logos-grid">
-<!-- CAPES -->
-<a aria-label="Acessar o site da CAPES" class="logo-card" href="https://www.gov.br/capes/" rel="noopener" target="_blank">
-<img alt="CAPES" src="images/capes.png"/>
-</a>
-<!-- Sociedade Brasileira de Sociologia -->
-<a aria-label="Acessar o site da Sociedade Brasileira de Sociologia" class="logo-card" href="https://sbsociologia.org.br/" rel="noopener" target="_blank">
-<img alt="Sociedade Brasileira de Sociologia" src="images/sbs.webp"/>
-</a>
-<!-- FAPESE -->
-<a aria-label="Acessar o site da FAPESE" class="logo-card" href="https://www.fapese.org.br/" rel="noopener" target="_blank">
-<img alt="FAPESE" src="images/fapese.png"/>
-</a>
-<!--
-        Para adicionar outro parceiro, copie um bloco:
-
-        <div class="logo-card">
-          <img src="images/logo-novo-parceiro.png"
-               alt="Nome do parceiro">
+    <div class="hotel-grid">
+      <article class="hotel-card">
+        <div class="hotel-top">
+          <h3>Ibis Aracaju</h3>
+          <span class="distance">aprox. 10 km</span>
         </div>
-      -->
-</div>
-<div class="links-cols">
-<div>
-<h4>Links de interesse</h4>
-<ul>
-<li><a href="https://www.sigaa.ufs.br/sigaa/public/programa/portal.jsf?id=139" rel="noopener" target="_blank">PPGS – UFS</a></li>
-<li><a href="https://periodicos.ufs.br/tomo/index" rel="noopener" target="_blank">Revista TOMO</a></li>
-</ul>
-</div>
-<div>
-<h4>Edições anteriores</h4>
-<ul>
-<li><a href="https://ri.ufs.br/handle/riufs/12783" rel="noopener" target="_blank">I SNS — 2016</a></li>
-<li><a href="https://plataforma9.com/congressos/seminario-nacional-sociologia-ufs.htm" rel="noopener" target="_blank">II SNS — 2018</a></li>
-<li><a href="https://snsociologia.wixsite.com/iiisemnacsociologia" rel="noopener" target="_blank">III SNS — 2020</a></li>
-<li><a href="https://snsociologia2022.wixsite.com/ivsnsufs" rel="noopener" target="_blank">IV SNS — 2022</a></li>
-<li><a href="https://snsociologiaufs.com.br" rel="noopener" target="_blank">V SNS — 2024</a></li>
-</ul>
-</div>
-</div>
-</div>
+        <p>Av. Adélia Franco, 2719, Grageru, próximo ao Shopping Jardins.</p>
+        <div class="hotel-links">
+          <a class="text-link" href="https://all.accor.com/hotel/5460/index.pt-br.shtml" target="_blank" rel="noopener">Site do hotel</a>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Ibis%20Aracaju%20Av.%20Ad%C3%A9lia%20Franco%202719%20Grageru%20Aracaju" target="_blank" rel="noopener">Ver no mapa</a>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-top">
+          <h3>Atalaia Apart Hotel</h3>
+          <span class="distance">aprox. 13 km</span>
+        </div>
+        <p>Av. Beira Mar, nº 1140, Aracaju.</p>
+        <div class="hotel-links">
+          <a class="text-link" href="http://www.atalaiaaparthotel.com.br/" target="_blank" rel="noopener">Site do hotel</a>
+          <a class="text-link" href="mailto:reservas@atalaiaaparthotel.com.br">E-mail</a>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Atalaia%20Apart%20Hotel%20Av.%20Beira%20Mar%201140%20Aracaju" target="_blank" rel="noopener">Ver no mapa</a>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-top">
+          <h3>Celi Connect Hotel Orla Aracaju</h3>
+          <span class="distance">aprox. 15,2 km</span>
+        </div>
+        <p>Av. Conselheiro João Moreira Filho, 635, Orla de Atalaia.</p>
+        <div class="hotel-links">
+          <a class="text-link" href="https://celihotel.com.br/celi-connect/" target="_blank" rel="noopener">Site do hotel</a>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Celi%20Connect%20Hotel%20Orla%20Aracaju" target="_blank" rel="noopener">Ver no mapa</a>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-top">
+          <h3>Vila Aju Pousada Temática</h3>
+          <span class="distance">aprox. 13 km</span>
+        </div>
+        <p>Rua François Hoald, 276, Atalaia.</p>
+        <div class="hotel-links">
+          <a class="text-link" href="https://vilaaju.com.br/" target="_blank" rel="noopener">Site da pousada</a>
+          <a class="text-link" href="mailto:reserva@vilaaju.com.br">E-mail</a>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Vila%20Aju%20Pousada%20Tem%C3%A1tica%20Aracaju" target="_blank" rel="noopener">Ver no mapa</a>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-top">
+          <h3>Anauê Pousada e Hostel</h3>
+          <span class="distance">aprox. 14,9 km</span>
+        </div>
+        <p>Av. Lions Club, nº 289, Atalaia.</p>
+        <div class="hotel-links">
+          <a class="text-link" href="https://www.anauehostel.com.br/" target="_blank" rel="noopener">Site da pousada</a>
+          <a class="text-link" href="mailto:reservas@anauehostel.com.br">E-mail</a>
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Anau%C3%AA%20Pousada%20e%20Hostel%20Aracaju" target="_blank" rel="noopener">Ver no mapa</a>
+        </div>
+      </article>
+
+      <article class="hotel-card">
+        <div class="hotel-top">
+          <h3>Outras possibilidades</h3>
+          <span class="distance">Aracaju</span>
+        </div>
+        <p>Além das opções listadas, há hotéis, pousadas e locações por temporada, inclusive pela região da Orla da Atalaia.</p>
+        <div class="hotel-links">
+          <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=Orla%20de%20Atalaia%20Aracaju%20hot%C3%A9is" target="_blank" rel="noopener">Explorar a região</a>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
+
+<section class="guide-section" id="transporte">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Transporte</div>
+        <h2>Como chegar e circular</h2>
+      </div>
+      <p>
+        Aracaju utiliza um sistema integrado de transporte urbano. Em frente ao campus há um terminal
+        que conecta São Cristóvão a diferentes áreas de Aracaju.
+      </p>
+    </div>
+
+    <div class="info-panel">
+      <div class="info-main">
+        <h3>Linhas úteis para o Terminal Campus</h3>
+        <ul class="info-list">
+          <li><strong>090 · Terminal DIA / Terminal Campus:</strong> ligação com o Terminal de Integração do DIA.</li>
+          <li><strong>604 · Terminal Mercado / Terminal Campus:</strong> ligação com a região central de Aracaju.</li>
+          <li><strong>050 · Campus / Hospital Universitário:</strong> passa pelo Terminal de Integração Leonel Brizola.</li>
+          <li><strong>301 · Povoado Cabrita / Terminal Campus:</strong> também segue em direção ao Terminal Campus.</li>
+        </ul>
+      </div>
+      <aside class="info-side">
+        <h3>Dica de deslocamento</h3>
+        <p>Os trajetos para o centro, Orla de Atalaia, aeroporto e rodoviária podem levar tempo.</p>
+        <p>Para deslocamentos mais ágeis, o material da organização sugere o uso de carros por aplicativo, preferencialmente na saída do campus, próxima ao terminal.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section alt" id="alimentacao">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Alimentação</div>
+        <h2>Onde comer perto do evento</h2>
+      </div>
+      <p>
+        Para os intervalos do seminário, há opções dentro do campus e no Rosa Elze.
+        A lista abaixo reúne os estabelecimentos citados no material de informações úteis.
+      </p>
+    </div>
+
+    <div class="food-grid">
+      <article class="food-card">
+        <span class="where">Dentro da UFS</span>
+        <h3>Opções rápidas durante o evento</h3>
+        <ul class="place-list">
+          <li><strong>Restaurante self-service do DCE</strong><span class="handle">funcionamento a confirmar</span></li>
+          <li><strong>Lanchonete do Moura</strong><span class="handle">próx. ao Restaurante Universitário</span></li>
+          <li><strong>Geek’s Café</strong><span class="handle">@geeks_cafe_ufs</span></li>
+        </ul>
+      </article>
+
+      <article class="food-card">
+        <span class="where">Rosa Elze · entorno da UFS</span>
+        <h3>Restaurantes, cafés e lanches</h3>
+        <ul class="place-list">
+          <li><strong>Restaurante Pimentas</strong><span class="handle">@restaurantepimentas3</span></li>
+          <li><strong>Yakimassa</strong><span class="handle">@yakimassaoficial</span></li>
+          <li><strong>O Espetinho do Zé</strong><span class="handle">@espetinhosdoze</span></li>
+          <li><strong>Café Açaiteria</strong><span class="handle">@acaiteriamixecafe</span></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="guide-section" id="conhecer">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Aracaju</div>
+        <h2>O que conhecer</h2>
+      </div>
+      <p>
+        Entre uma atividade e outra, a cidade oferece espaços ligados à história, à cultura,
+        à culinária e às tradições sergipanas, além da Orla da Atalaia.
+      </p>
+    </div>
+
+    <div class="sights-grid">
+      <article class="sight">
+        <span class="tag">Orla</span>
+        <h3>Orla da Atalaia</h3>
+        <p>Um dos cartões-postais de Aracaju, com bares, restaurantes, lanchonetes, cafés e atividades de lazer à beira-mar.</p>
+      </article>
+      <article class="sight">
+        <span class="tag">Centro histórico</span>
+        <h3>Colina do Santo Antônio</h3>
+        <p>Uma das referências indicadas para quem deseja conhecer marcos históricos da cidade.</p>
+      </article>
+      <article class="sight">
+        <span class="tag">Cultura e comércio</span>
+        <h3>Mercados Municipais</h3>
+        <p>Região destacada no material pela presença de expressões da cultura, do artesanato, da culinária e das tradições locais.</p>
+      </article>
+      <article class="sight">
+        <span class="tag">Cultura</span>
+        <h3>Museu da Gente Sergipana</h3>
+        <p>Uma das sugestões para entrar em contato com diferentes expressões da cultura sergipana.</p>
+      </article>
+      <article class="sight">
+        <span class="tag">Centro</span>
+        <h3>Centro Cultural e Centro de Turismo</h3>
+        <p>O Centro Cultural de Aracaju e o Centro de Turismo, na Rua do Turista, aparecem entre as opções de passeio pela região central.</p>
+      </article>
+      <article class="sight">
+        <span class="tag">Espaço público</span>
+        <h3>Largo da Gente Sergipana</h3>
+        <p>Mais uma opção indicada para conhecer referências culturais e fazer registros da passagem por Aracaju.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="final-note">
+  <div class="wrap">
+    <div class="final-note-box">
+      <div>
+        <h2>Organize seu deslocamento com antecedência</h2>
+        <p>Distâncias, horários, tarifas e funcionamento de estabelecimentos podem sofrer alterações. Antes de sair, confirme as informações diretamente com o serviço ou estabelecimento escolhido.</p>
+      </div>
+      <a class="btn" href="index.html#inscricao">Voltar às inscrições</a>
+    </div>
+  </div>
+</section>
+</main>
 <footer>
   <div class="wrap">
     <div class="footer-top">
@@ -2666,6 +2539,52 @@ footer h4{color:#fff;font-family:'Nunito Sans',sans-serif;font-size:1.05rem;font
   document.querySelectorAll('.reveal').forEach(element => {
     observer.observe(element);
   });
+</script>
+
+<script>
+(function(){
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
+
+  const easeInOutCubic = t =>
+    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+
+  function smoothScrollTo(targetY, duration = 720){
+    const startY = window.scrollY;
+    const distance = targetY - startY;
+    const startTime = performance.now();
+
+    function step(now){
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + distance * easeInOutCubic(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  document.addEventListener('click', function(event){
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const id = link.getAttribute('href');
+    if (!id || id === '#') return;
+
+    const target = document.querySelector(id);
+    if (!target) return;
+
+    event.preventDefault();
+
+    const nav = document.querySelector('.site-nav');
+    const navHeight = nav ? nav.offsetHeight : 0;
+    const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 14;
+
+    smoothScrollTo(Math.max(0, top), 760);
+
+    history.pushState(null, '', id);
+  });
+})();
 </script>
 
 </body>

@@ -875,19 +875,19 @@
 
   .logos-grid{
     display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:18px;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:14px;
     margin-top:24px;
   }
 
   .logo-card{
-  min-height:130px;
+  min-height:100px;
   background:#fff;
   border:1px solid var(--line);
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:24px;
+  padding:16px;
   text-decoration:none;
   cursor:pointer;
   transition:transform .2s ease, box-shadow .2s ease;
@@ -901,7 +901,7 @@
 .logo-card img{
   display:block;
   max-width:100%;
-  max-height:75px;
+  max-height:55px;
   width:auto;
   height:auto;
   object-fit:contain;
@@ -929,7 +929,7 @@
 
   @media (max-width:900px){
     .logos-grid{
-      grid-template-columns:repeat(2,minmax(0,1fr));
+      grid-template-columns:repeat(3,minmax(0,1fr));
     }
     .realizacao-grid{
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -937,7 +937,9 @@
   }
 
   @media (max-width:560px){
-    .logos-grid,
+    .logos-grid{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
     .realizacao-grid{
       grid-template-columns:1fr;
     }
